@@ -21,12 +21,12 @@ namespace DAO
                 return instance;
             }
         }
-        public List<Name> Show()
+        public List<USER> Show()
         {
-            List<Name> names = new List<Name>();
-            using (DemoLinQDataContext db = new DemoLinQDataContext())
+            List<USER> names = new List<USER>();
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
             {
-                names = db.Names.Select(p => p).ToList();
+                names = db.USERs.Select(p => p).ToList();
             }
                 return names;
         }

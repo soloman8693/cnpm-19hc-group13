@@ -33,5 +33,16 @@ namespace DAO.Properties {
                 return ((string)(this["DemoConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-U0ORHBD\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
+            "ecurity=True")]
+        public string QUANLYNHAHANGConnectionString {
+            get {
+                return ((string)(this["QUANLYNHAHANGConnectionString"]));
+            }
+        }
     }
 }

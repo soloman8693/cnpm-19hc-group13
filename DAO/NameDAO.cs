@@ -24,6 +24,7 @@ namespace DAO
         public List<USER> Show()
         {
             List<USER> names = new List<USER>();
+            List<USER> hoa = new List<USER>();
             using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
             {
                 names = db.USERs.Select(p => p).ToList();

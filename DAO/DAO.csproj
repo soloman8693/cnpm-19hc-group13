@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAOUser.cs" />
     <Compile Include="NameDAO.cs" />
     <Compile Include="DemoLinQ.designer.cs">
       <AutoGen>True</AutoGen>

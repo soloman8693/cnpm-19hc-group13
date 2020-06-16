@@ -1,17 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QUANLYNHAHANG" Class="QuanLyNhaHangDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-U0ORHBD\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="QUANLYNHAHANGConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.DETAIL_ORDER" Member="DETAIL_ORDERs">
-    <Type Name="DETAIL_ORDER">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ID_ORDER" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID_FOOD" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="FOOD_NAME" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Column Name="AMOUNT_OF_FOOD" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID_DRINK" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="AMOUNT_OF_DRINK" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MONEY" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </Type>
-  </Table>
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-PHVNS5LA;Initial Catalog=QUANLYNHAHANG;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="QUANLYNHAHANGConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.[USER]" Member="USERs">
     <Type Name="USER">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -22,6 +10,18 @@
       <Column Name="USER_NAME" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="PASSWORD" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="REMEMBER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DETAIL_ORDER" Member="DETAIL_ORDERs">
+    <Type Name="DETAIL_ORDER">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_ORDER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_FOOD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FOOD_NAME" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="AMOUNT_OF_FOOD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_DRINK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AMOUNT_OF_DRINK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MONEY" Type="System.Double" DbType="Float" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.DRINK" Member="DRINKs">
@@ -81,7 +81,7 @@
   <Table Name="dbo.RESERVATION" Member="RESERVATIONs">
     <Type Name="RESERVATION">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="COSTOMER_NAME" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CUSTOMER_NAME" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
       <Column Name="PHONE" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
       <Column Name="ID_TABLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />

@@ -37,7 +37,7 @@ namespace DAO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-U0ORHBD\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-G9MAPAJ\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
             "ecurity=True")]
         public string QUANLYNHAHANGConnectionString {
             get {

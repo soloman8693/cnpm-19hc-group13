@@ -52,10 +52,29 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="NG_UI\LOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NG_UI\LOGIN.Designer.cs">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NG_UI\MAINFORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NG_UI\MAINFORM.Designer.cs">
+      <DependentUpon>MAINFORM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignIn Static User\StaticUser.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NG_UI\LOGIN.resx">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NG_UI\MAINFORM.resx">
+      <DependentUpon>MAINFORM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -83,6 +102,10 @@
     <ProjectReference Include="..\BUS\BUS.csproj">
       <Project>{b9f35c7d-c73a-43d7-aee9-19f92d4298aa}</Project>
       <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{43cc4b11-a5b9-428b-b30d-1e58ca59b977}</Project>
+      <Name>DAO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

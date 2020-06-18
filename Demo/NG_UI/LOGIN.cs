@@ -42,9 +42,14 @@ namespace Demo.NG_UI
         private void txtUserName_TextChanged(object sender, EventArgs e)
         {
             USER user = BUSUser.Instance.CheckRememberUser(txtUserName.Text);
-            if (!(user is null)) {
+            if (!(user is null))
+            {
                 txtPassWord.Text = user.PASSWORD.Trim();
                 ckRemember.Checked = true;
+            }
+            else {
+                txtPassWord.Text = "";
+                ckRemember.Checked = false;
             }
         }
 
@@ -58,6 +63,30 @@ namespace Demo.NG_UI
                     ckRemember.Checked = true;
                     txtUserName.Text = user.USER_NAME.Trim();
                 }
+            }
+        }
+
+        private void frmLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin.PerformClick();
+            }
+        }
+
+        private void txtUserName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin.PerformClick();
+            }
+        }
+
+        private void txtPassWord_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin.PerformClick();
             }
         }
     }

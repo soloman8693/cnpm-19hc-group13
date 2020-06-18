@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 using DAO;
+using Demo.EMPLOYEE_UI;
 
 namespace Demo.NG_UI
 {
@@ -69,6 +70,12 @@ namespace Demo.NG_UI
         private void timer1_Tick(object sender, EventArgs e)
         {
             lbTime.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Employee employ = new Employee();
+            employ.Show();
         }
     }
 }

@@ -26,7 +26,7 @@ namespace DAO
             List<USER> names = new List<USER>();
             using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
             {
-                names = db.USERs.Select(p => p).ToList();
+               names = db.USERs.ToList();
             }
                 return names;
         }

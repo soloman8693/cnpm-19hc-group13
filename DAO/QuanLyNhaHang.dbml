@@ -1,17 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QUANLYNHAHANG" Class="QuanLyNhaHangDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-PHVNS5LA;Initial Catalog=QUANLYNHAHANG;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="QUANLYNHAHANGConnectionString1" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.[USER]" Member="USERs">
-    <Type Name="USER">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FULL_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="GENDER" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="ADDRESS" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Column Name="ROLE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="USER_NAME" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="PASSWORD" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="REMEMBER" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-G9MAPAJ\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="QUANLYNHAHANGConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.DETAIL_ORDER" Member="DETAIL_ORDERs">
     <Type Name="DETAIL_ORDER">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -95,6 +83,18 @@
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TABLE_NAME" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[USER]" Member="USERs">
+    <Type Name="USER">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FULL_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="GENDER" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="ADDRESS" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ROLE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="USER_NAME" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PASSWORD" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="REMEMBER" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

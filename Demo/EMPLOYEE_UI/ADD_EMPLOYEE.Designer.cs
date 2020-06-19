@@ -36,13 +36,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtRole = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.cbbRole = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -119,13 +119,6 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Loại tài khoản:";
             // 
-            // txtRole
-            // 
-            this.txtRole.Location = new System.Drawing.Point(28, 279);
-            this.txtRole.Name = "txtRole";
-            this.txtRole.Size = new System.Drawing.Size(272, 20);
-            this.txtRole.TabIndex = 8;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -182,19 +175,29 @@
             this.btnRefresh.TabIndex = 14;
             this.btnRefresh.Text = "Huỷ";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // cbbRole
+            // 
+            this.cbbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbRole.FormattingEnabled = true;
+            this.cbbRole.Location = new System.Drawing.Point(30, 278);
+            this.cbbRole.Name = "cbbRole";
+            this.cbbRole.Size = new System.Drawing.Size(270, 21);
+            this.cbbRole.TabIndex = 15;
             // 
             // ADD_EMPLOYEE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(337, 512);
+            this.Controls.Add(this.cbbRole);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtRole);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.label4);
@@ -221,12 +224,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtRole;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.ComboBox cbbRole;
     }
 }

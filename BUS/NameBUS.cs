@@ -23,9 +23,5 @@ namespace BUS
                 return instance;
             }
         }
-        public void Show(DataGridView dataGridView)
-        {
-            dataGridView.DataSource = NameDAO.Instance.Show();
-        }
     }
 }

@@ -25,7 +25,7 @@ namespace Demo
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-            NameBUS.Instance.Show(dataGV);
+            BUSUser.Instance.Show(dataGV);
         }
     }
 }

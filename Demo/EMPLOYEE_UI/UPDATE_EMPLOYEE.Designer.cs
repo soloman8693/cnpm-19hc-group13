@@ -36,11 +36,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtRole = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.cbbRole = new System.Windows.Forms.ComboBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -114,14 +115,6 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Loại tài khoản";
             // 
-            // txtRole
-            // 
-            this.txtRole.Location = new System.Drawing.Point(30, 279);
-            this.txtRole.Name = "txtRole";
-            this.txtRole.Size = new System.Drawing.Size(282, 20);
-            this.txtRole.TabIndex = 8;
-            this.txtRole.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -136,6 +129,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(30, 338);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(282, 20);
             this.txtPassword.TabIndex = 10;
             this.txtPassword.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
@@ -149,6 +143,7 @@
             this.btnRefresh.TabIndex = 15;
             this.btnRefresh.Text = "Huỷ";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // button1
             // 
@@ -159,17 +154,37 @@
             this.button1.TabIndex = 16;
             this.button1.Text = "Cập nhật";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cbbRole
+            // 
+            this.cbbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbRole.FormattingEnabled = true;
+            this.cbbRole.Location = new System.Drawing.Point(30, 281);
+            this.cbbRole.Name = "cbbRole";
+            this.cbbRole.Size = new System.Drawing.Size(282, 21);
+            this.cbbRole.TabIndex = 17;
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(30, 364);
+            this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
+            this.txtID.Size = new System.Drawing.Size(283, 20);
+            this.txtID.TabIndex = 18;
+            this.txtID.Visible = false;
             // 
             // UPDATE_EMPLOYEE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 450);
+            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.cbbRole);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtRole);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.label4);
@@ -189,17 +204,18 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtGender;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtRole;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox txtName;
+        public System.Windows.Forms.TextBox txtGender;
+        public System.Windows.Forms.TextBox txtAddress;
+        public System.Windows.Forms.TextBox txtPassword;
+        public System.Windows.Forms.ComboBox cbbRole;
+        public System.Windows.Forms.TextBox txtID;
     }
 }

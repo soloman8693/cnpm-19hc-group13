@@ -70,5 +70,65 @@ namespace DAO
                 db.SubmitChanges();
             }
         }
+
+
+        public bool UpdateEmployee(int id, string fullName, string gender, string address, int role, string password)
+        {
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            {
+                USER us = db.USERs.Single(u => u.ID == id);
+                us.FULL_NAME = fullName;
+                us.GENDER = gender;
+                us.ADDRESS = address;
+                us.ROLE = role;
+                us.PASSWORD = password;
+
+                db.SubmitChanges();
+
+                return true;
+            }
+        }
+
+        public bool DeleteEmployee(int id)
+        {
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            {
+                USER us = db.USERs.Single(u => u.ID == id);
+                db.USERs.DeleteOnSubmit(us);
+                db.SubmitChanges();
+                return true;
+            }
+        }
+
+        public List<USER> Show()
+        {
+            List<USER> names = new List<USER>();
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            {
+                names = db.USERs.ToList();
+            }
+            return names;
+        }
+
+        public List<PERMISSION> ShowPermission()
+        {
+            List<PERMISSION> pers = new List<PERMISSION>();
+
+            using(QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            {
+                pers = db.PERMISSIONs.ToList();
+            }
+            return pers;
+        }
+
+        public List<USER> Search(string searchName)
+        {
+            List<USER> names = new List<USER>();
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            {
+                names = db.USERs.Where(x => x.FULL_NAME.Contains(searchName)).ToList();
+            }
+            return names;
+        }
     }
 }

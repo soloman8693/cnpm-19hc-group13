@@ -165,7 +165,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(28, 440);
+            this.btnAdd.Location = new System.Drawing.Point(174, 440);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(126, 42);
             this.btnAdd.TabIndex = 13;
@@ -175,11 +175,11 @@
             // btnRefresh
             // 
             this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Location = new System.Drawing.Point(170, 440);
+            this.btnRefresh.Location = new System.Drawing.Point(28, 440);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(130, 42);
             this.btnRefresh.TabIndex = 14;
-            this.btnRefresh.Text = "Làm lại";
+            this.btnRefresh.Text = "Huỷ";
             this.btnRefresh.UseVisualStyleBackColor = true;
             // 
             // ADD_EMPLOYEE

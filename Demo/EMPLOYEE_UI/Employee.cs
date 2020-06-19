@@ -53,5 +53,18 @@ namespace Demo.EMPLOYEE_UI
             UPDATE_EMPLOYEE updateForm = new UPDATE_EMPLOYEE();
             updateForm.Show();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Bạn có muốn xoá nhân viên?", "", MessageBoxButtons.YesNo);
+            if(confirmResult == DialogResult.Yes)
+            {
+                MessageBox.Show("Yes");
+            }
+            else
+            {
+                MessageBox.Show("No");
+            }
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAO;
 
 namespace Demo.NG_UI
 {
@@ -19,9 +20,20 @@ namespace Demo.NG_UI
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {   
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            txtHoTen.Text = "Nhập họ tên";
-            
+            string fullName = txtHoTen.Text;
+            string gender =  txtGender.Text;
+            string address = txtAddress.Text;
+            int role = Int32.Parse(txtRole.Text);
+            string userName = txtUser.Text;
+            string passWord = txtPassword.Text;
+
+            DAO.DAOUser.Instance.AddEmployee(fullName, gender, address, role, userName, passWord);
+            this.Hide();
         }
     }
 }

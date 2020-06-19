@@ -34,5 +34,11 @@ namespace BUS
         public USER CheckRememberUser(string UserName) {
             return DAOUser.Instance.CheckRememberUser(UserName);
         }
+
+
+        public void AddEmployee(string fullName, string gender, string address, int role, string userName, string passWord)
+        {
+            DAOUser.Instance.AddEmployee(fullName, gender, address, role, userName, passWord);
+        }
     }
 }

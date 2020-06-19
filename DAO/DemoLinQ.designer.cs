@@ -33,7 +33,7 @@ namespace DAO
     #endregion
 		
 		public DemoLinQDataContext() : 
-				base(global::DAO.Properties.Settings.Default.DemoConnectionString, mappingSource)
+				base(global::DAO.Properties.Settings.Default.QUANLYNHAHANGConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

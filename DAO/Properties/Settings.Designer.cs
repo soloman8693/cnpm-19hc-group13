@@ -26,18 +26,29 @@ namespace DAO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-U0ORHBD\\SQLEXPRESS;Initial Catalog=Demo;Integrated Security=T" +
-            "rue")]
-        public string DemoConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-B0IEVJK\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
+            "ecurity=True")]
+        public string QUANLYNHAHANGConnectionString1 {
             get {
-                return ((string)(this["DemoConnectionString"]));
+                return ((string)(this["QUANLYNHAHANGConnectionString1"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-U0ORHBD\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-B0IEVJK\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
+            "ecurity=True")]
+        public string QUANLYNHAHANGConnectionString2 {
+            get {
+                return ((string)(this["QUANLYNHAHANGConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-B0IEVJK\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
             "ecurity=True")]
         public string QUANLYNHAHANGConnectionString {
             get {
@@ -48,22 +59,22 @@ namespace DAO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-PHVNS5LA;Initial Catalog=QUANLYNHAHANG;Integrated Security=Tru" +
-            "e")]
-        public string QUANLYNHAHANGConnectionString1 {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-B0IEVJK\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
+            "ecurity=True")]
+        public string DataSourceConnectionString {
             get {
-                return ((string)(this["QUANLYNHAHANGConnectionString1"]));
+                return ((string)(this["DataSourceConnectionString"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-G9MAPAJ\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-B0IEVJK\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
             "ecurity=True")]
-        public string QUANLYNHAHANGConnectionString2 {
+        public string DemoConnectionString {
             get {
-                return ((string)(this["QUANLYNHAHANGConnectionString2"]));
+                return ((string)(this["DemoConnectionString"]));
             }
         }
     }

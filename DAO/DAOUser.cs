@@ -32,10 +32,11 @@ namespace DAO
         }
      
         public void RememberSignIn(string UserName,string PassWord,Boolean Remember) {
-            USER RegistedUser = null;
+            //var RegistedUser;
             using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
             {
-                RegistedUser = (USER)(from u in db.USERs where u.USER_NAME.Trim() == UserName && u.PASSWORD == PassWord.Trim() select u).FirstOrDefault();
+                //RegistedUser = (USER)(from u in db.USERs where u.USER_NAME.Trim() == UserName && u.PASSWORD == PassWord.Trim() select u).FirstOrDefault();
+                var RegistedUser = (from u in db.USERs select u).FirstOrDefault();
                 RegistedUser.REMEMBER = Remember == true ? 1 : 0;
                 db.SubmitChanges();
             }
@@ -49,6 +50,24 @@ namespace DAO
                 user = (USER)(from u in db.USERs where u.USER_NAME == UserName.Trim() && u.REMEMBER == 1 select u).FirstOrDefault();
                 return user;
 
+            }
+        }
+
+        public void AddEmployee(string fullName, string gender, string address, int role, string userName, string passWord)
+        {
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            {
+                USER user = new USER();
+                user.FULL_NAME = fullName;
+                user.GENDER = gender;
+                user.ADDRESS = address;
+                user.ROLE = role;
+                user.USER_NAME = userName;
+                user.PASSWORD = passWord;
+                user.REMEMBER = 0;
+
+                db.USERs.InsertOnSubmit(user);
+                db.SubmitChanges();
             }
         }
     }

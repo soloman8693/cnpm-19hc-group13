@@ -82,9 +82,33 @@
     <Compile Include="NG_UI\MAINFORM.Designer.cs">
       <DependentUpon>MAINFORM.cs</DependentUpon>
     </Compile>
+    <Compile Include="ORDER\ORDER_LIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ORDER\ORDER_LIST.Designer.cs">
+      <DependentUpon>ORDER_LIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORDER\RESOURCES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ORDER\RESOURCES.Designer.cs">
+      <DependentUpon>RESOURCES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORDER\UPDATE_STATUS_ORDER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ORDER\UPDATE_STATUS_ORDER.Designer.cs">
+      <DependentUpon>UPDATE_STATUS_ORDER.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignIn Static User\StaticUser.cs" />
+    <Compile Include="TABLE_UI\BOOK_TABLE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TABLE_UI\BOOK_TABLE.Designer.cs">
+      <DependentUpon>BOOK_TABLE.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="EMPLOYEE_UI\Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,6 +127,15 @@
     <EmbeddedResource Include="NG_UI\MAINFORM.resx">
       <DependentUpon>MAINFORM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ORDER\ORDER_LIST.resx">
+      <DependentUpon>ORDER_LIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ORDER\RESOURCES.resx">
+      <DependentUpon>RESOURCES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ORDER\UPDATE_STATUS_ORDER.resx">
+      <DependentUpon>UPDATE_STATUS_ORDER.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -112,6 +145,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TABLE_UI\BOOK_TABLE.resx">
+      <DependentUpon>BOOK_TABLE.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -135,5 +171,6 @@
       <Name>DAO</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

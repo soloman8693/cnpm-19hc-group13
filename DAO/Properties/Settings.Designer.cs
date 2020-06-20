@@ -26,18 +26,7 @@ namespace DAO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-G9MAPAJ\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
-            "ecurity=True")]
-        public string DataSourceConnectionString {
-            get {
-                return ((string)(this["DataSourceConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-G9MAPAJ\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-B0IEVJK\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
             "ecurity=True")]
         public string DemoConnectionString {
             get {
@@ -48,7 +37,7 @@ namespace DAO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-G9MAPAJ\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-B0IEVJK\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
             "ecurity=True")]
         public string QUANLYNHAHANGConnectionString {
             get {
@@ -59,7 +48,7 @@ namespace DAO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-G9MAPAJ\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-B0IEVJK\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
             "ecurity=True")]
         public string QUANLYNHAHANGConnectionString1 {
             get {
@@ -70,11 +59,22 @@ namespace DAO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-G9MAPAJ\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-B0IEVJK\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
             "ecurity=True")]
         public string QUANLYNHAHANGConnectionString2 {
             get {
                 return ((string)(this["QUANLYNHAHANGConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-B0IEVJK\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
+            "ecurity=True")]
+        public string DataSourceConnectionString {
+            get {
+                return ((string)(this["DataSourceConnectionString"]));
             }
         }
     }

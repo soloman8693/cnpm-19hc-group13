@@ -51,7 +51,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(891, 31);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(56, 19);
             this.button1.TabIndex = 0;
@@ -64,7 +64,7 @@
             this.btnUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUserName.ForeColor = System.Drawing.SystemColors.Highlight;
             this.btnUserName.Location = new System.Drawing.Point(858, 0);
-            this.btnUserName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUserName.Margin = new System.Windows.Forms.Padding(2);
             this.btnUserName.Name = "btnUserName";
             this.btnUserName.Size = new System.Drawing.Size(178, 23);
             this.btnUserName.TabIndex = 1;
@@ -100,14 +100,14 @@
             // nhânViênToolStripMenuItem
             // 
             this.nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
-            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.nhânViênToolStripMenuItem.Text = "Nhân Viên";
             this.nhânViênToolStripMenuItem.Click += new System.EventHandler(this.nhânViênToolStripMenuItem_Click);
             // 
             // bànToolStripMenuItem
             // 
             this.bànToolStripMenuItem.Name = "bànToolStripMenuItem";
-            this.bànToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bànToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.bànToolStripMenuItem.Text = "Bàn";
             // 
             // orderToolStripMenuItem
@@ -121,6 +121,7 @@
             this.orderToolStripMenuItem1.Name = "orderToolStripMenuItem1";
             this.orderToolStripMenuItem1.Size = new System.Drawing.Size(49, 20);
             this.orderToolStripMenuItem1.Text = "Order";
+            this.orderToolStripMenuItem1.Click += new System.EventHandler(this.orderToolStripMenuItem1_Click);
             // 
             // nguyênLiệuToolStripMenuItem
             // 
@@ -158,7 +159,7 @@
             // flowTableGenerate
             // 
             this.flowTableGenerate.Location = new System.Drawing.Point(16, 17);
-            this.flowTableGenerate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowTableGenerate.Margin = new System.Windows.Forms.Padding(2);
             this.flowTableGenerate.Name = "flowTableGenerate";
             this.flowTableGenerate.Size = new System.Drawing.Size(422, 209);
             this.flowTableGenerate.TabIndex = 5;
@@ -167,9 +168,9 @@
             // 
             this.groupBox1.Controls.Add(this.flowTableGenerate);
             this.groupBox1.Location = new System.Drawing.Point(23, 75);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(463, 245);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
@@ -178,9 +179,9 @@
             // groupBox2
             // 
             this.groupBox2.Location = new System.Drawing.Point(525, 75);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(488, 245);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
@@ -200,7 +201,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RESTAURENT MANAGEMENT SYSTEM";

@@ -22,7 +22,7 @@ namespace DAO
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QUANLYNHAHANG")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DataSource")]
 	public partial class QuanLyNhaHangDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -66,7 +66,7 @@ namespace DAO
     #endregion
 		
 		public QuanLyNhaHangDataContext() : 
-				base(global::DAO.Properties.Settings.Default.QUANLYNHAHANGConnectionString2, mappingSource)
+				base(global::DAO.Properties.Settings.Default.DemoConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

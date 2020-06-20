@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BUS;
 using DAO;
 using Demo.EMPLOYEE_UI;
+using Demo.ORTHER;
 
 namespace Demo.NG_UI
 {
@@ -76,6 +77,12 @@ namespace Demo.NG_UI
         {
             Employee employ = new Employee();
             employ.Show();
+        }
+
+        private void orderToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ORDER_LIST order = new ORDER_LIST();
+            order.Show();
         }
     }
 }

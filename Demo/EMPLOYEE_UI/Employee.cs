@@ -36,8 +36,8 @@ namespace Demo.EMPLOYEE_UI
             dgvDSNhanVien.Columns[1].HeaderText = "Họ tên";
             dgvDSNhanVien.Columns[2].HeaderText = "Giới tính";
             dgvDSNhanVien.Columns[3].HeaderText = "Địa chỉ";
-            //dgvDSNhanVien.Columns[4].HeaderText = "Loại tài khoản";
-            dgvDSNhanVien.Columns[4].Visible = false;
+            dgvDSNhanVien.Columns[4].HeaderText = "Loại tài khoản";
+            //dgvDSNhanVien.Columns[4].Visible = false;
             dgvDSNhanVien.Columns[5].Visible = false;
             dgvDSNhanVien.Columns[6].Visible = false;
             dgvDSNhanVien.Columns[7].Visible = false;

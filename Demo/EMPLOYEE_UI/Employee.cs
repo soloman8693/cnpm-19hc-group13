@@ -37,10 +37,8 @@ namespace Demo.EMPLOYEE_UI
             dgvDSNhanVien.Columns[2].HeaderText = "Giới tính";
             dgvDSNhanVien.Columns[3].HeaderText = "Địa chỉ";
             dgvDSNhanVien.Columns[4].HeaderText = "Loại tài khoản";
-            //dgvDSNhanVien.Columns[4].Visible = false;
             dgvDSNhanVien.Columns[5].Visible = false;
             dgvDSNhanVien.Columns[6].Visible = false;
-            dgvDSNhanVien.Columns[7].Visible = false;
         }
 
         private void LoadData()
@@ -94,7 +92,7 @@ namespace Demo.EMPLOYEE_UI
             updateForm.txtGender.Text = this.dgvDSNhanVien.CurrentRow.Cells[2].Value.ToString();
             updateForm.txtAddress.Text = this.dgvDSNhanVien.CurrentRow.Cells[3].Value.ToString();
             updateForm.txtPassword.Text = this.dgvDSNhanVien.CurrentRow.Cells[6].Value.ToString();
-            BUS.BUSUser.Instance.ShowPermission(updateForm.cbbRole, "UPDATE", Int32.Parse(this.dgvDSNhanVien.CurrentRow.Cells[4].Value.ToString()));
+            BUS.BUSUser.Instance.ShowPermission(updateForm.cbbRole, "UPDATE", Int32.Parse(this.dgvDSNhanVien.CurrentRow.Cells[5].Value.ToString()));
             updateForm.onUpdateData += LoadData;
             updateForm.ShowDialog();
         }

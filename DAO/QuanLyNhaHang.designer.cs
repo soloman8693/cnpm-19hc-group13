@@ -22,7 +22,7 @@ namespace DAO
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DataSource")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QUANLYNHAHANG")]
 	public partial class QuanLyNhaHangDataContext : System.Data.Linq.DataContext
 	{
 		

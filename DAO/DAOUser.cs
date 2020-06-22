@@ -10,6 +10,17 @@ namespace DAO
     {
         private static DAOUser instance;
 
+        public class UserRole
+        {
+            public int ID { get; set; }
+            public string FULL_NAME { get; set; }
+            public string GENDER { get; set; }
+            public string ADDRESS { get; set; }
+            public string ROLE { get; set; }
+            public int ID_ROLE { get; set; }
+            public string PASSWORD { get; set; }
+        }
+
         public static DAOUser Instance
         {
             get
@@ -100,12 +111,20 @@ namespace DAO
             }
         }
 
-        public List<USER> Show()
+        public List<UserRole> Show()
         {
-            List<USER> names = new List<USER>();
+            List<UserRole> names = new List<UserRole>();
             using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
             {
-                names = db.USERs.ToList();
+                names = (from us in db.USERs join ps in db.PERMISSIONs on us.ROLE equals ps.ID select new UserRole {
+                    ID = us.ID, 
+                    FULL_NAME = us.FULL_NAME,
+                    GENDER = us.GENDER,
+                    ADDRESS = us.ADDRESS,
+                    ID_ROLE = us.ROLE,
+                    ROLE = ps.ROLE_TYPE,
+                    PASSWORD = us.PASSWORD
+                    }).ToList();
             }
             return names;
         }
@@ -121,12 +140,23 @@ namespace DAO
             return pers;
         }
 
-        public List<USER> Search(string searchName)
+        public List<UserRole> Search(string searchName)
         {
-            List<USER> names = new List<USER>();
+            List<UserRole> names = new List<UserRole>();
             using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
             {
-                names = db.USERs.Where(x => x.FULL_NAME.Contains(searchName)).ToList();
+                names = (from us in db.USERs
+                         join ps in db.PERMISSIONs on us.ROLE equals ps.ID
+                         select new UserRole
+                         {
+                             ID = us.ID,
+                             FULL_NAME = us.FULL_NAME,
+                             GENDER = us.GENDER,
+                             ADDRESS = us.ADDRESS,
+                             ID_ROLE = us.ROLE,
+                             ROLE = ps.ROLE_TYPE,
+                             PASSWORD = us.PASSWORD
+                         }).Where(x => x.FULL_NAME.Contains(searchName)).ToList();
             }
             return names;
         }

@@ -84,5 +84,11 @@ namespace Demo.NG_UI
             ORDER_LIST order = new ORDER_LIST();
             order.Show();
         }
+
+        private void orderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TABLE_UI.BOOK_TABLE bookTable = new TABLE_UI.BOOK_TABLE();
+            bookTable.Show();
+        }
     }
 }

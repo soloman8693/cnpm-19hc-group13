@@ -115,6 +115,7 @@
             this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
             this.orderToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.orderToolStripMenuItem.Text = "Đặt Bàn";
+            this.orderToolStripMenuItem.Click += new System.EventHandler(this.orderToolStripMenuItem_Click);
             // 
             // orderToolStripMenuItem1
             // 

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BUS;
+using DAO;
+using Demo.ORDER;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +17,7 @@ namespace Demo.ORTHER
         public ORDER_LIST()
         {
             InitializeComponent();
+            var data = DataSingleton.GetInstance().GetIdUser().ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,6 +36,33 @@ namespace Demo.ORTHER
         {
             TABLE_UI.BOOK_TABLE book_table = new TABLE_UI.BOOK_TABLE();
             book_table.Show();
+        }
+
+        private void ORDER_LIST_Load(object sender, EventArgs e)
+        {
+            BUSOrder.Instance.OrderList(dgvOrder);
+            dgvOrder.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void dgvOrder_DataSourceChanged(object sender, EventArgs e)
+        {
+            dgvOrder.Columns[1].Visible = false ;
+            dgvOrder.Columns[2].Visible = false;
+            dgvOrder.Columns[3].HeaderText = "Người thực hiện";
+            dgvOrder.Columns[4].HeaderText = "Tên bàn";
+            dgvOrder.Columns[5].HeaderText = "Tổng tiền";
+        }
+
+        private void dgvOrder_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvOrder.SelectedRows)
+            {
+                int id = Int32.Parse(row.Cells[0].Value.ToString());
+                DAOOrder.Instance.SetIdOrder(id);
+
+                ORDER_LIST_DETAIL dt = new ORDER_LIST_DETAIL();
+                dt.Show();
+            }
         }
     }
 }

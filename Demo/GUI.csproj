@@ -88,6 +88,12 @@
     <Compile Include="ORDER\ORDER_LIST.Designer.cs">
       <DependentUpon>ORDER_LIST.cs</DependentUpon>
     </Compile>
+    <Compile Include="ORDER\ORDER_LIST_DETAIL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ORDER\ORDER_LIST_DETAIL.Designer.cs">
+      <DependentUpon>ORDER_LIST_DETAIL.cs</DependentUpon>
+    </Compile>
     <Compile Include="ORDER\RESOURCES.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ORDER\ORDER_LIST.resx">
       <DependentUpon>ORDER_LIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ORDER\ORDER_LIST_DETAIL.resx">
+      <DependentUpon>ORDER_LIST_DETAIL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ORDER\RESOURCES.resx">
       <DependentUpon>RESOURCES.cs</DependentUpon>

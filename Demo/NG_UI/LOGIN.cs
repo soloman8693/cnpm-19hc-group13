@@ -34,6 +34,9 @@ namespace Demo.NG_UI
             }
             BUSUser.Instance.RememberSignIn(txtUserName.Text, txtPassWord.Text, ckRemember.Checked);
             SignIn_Static_User.StaticUser.SignIn_User = user;
+
+            DataSingleton.GetInstance().SetIdUser(user.ID);
+
             frmMain form = new frmMain();
             this.Hide();
             form.Show();

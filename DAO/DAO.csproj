@@ -42,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAOOrder.cs" />
     <Compile Include="DAOTable.cs" />
     <Compile Include="DAOUser.cs" />
+    <Compile Include="DataSingleton.cs" />
     <Compile Include="DemoLinQ.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

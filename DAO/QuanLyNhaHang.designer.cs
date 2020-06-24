@@ -66,7 +66,7 @@ namespace DAO
     #endregion
 		
 		public QuanLyNhaHangDataContext() : 
-				base(global::DAO.Properties.Settings.Default.QUANLYNHAHANGConnectionString2, mappingSource)
+				base(global::DAO.Properties.Settings.Default.DemoConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

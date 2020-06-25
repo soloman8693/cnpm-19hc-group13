@@ -24,5 +24,11 @@ namespace Demo.ORDER
             int id = DAOOrder.Instance.GetIdOrder();
             BUSOrder.Instance.OrderListDetail(dgvOrderListDetail, id);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ADD_ORDER add = new ADD_ORDER();
+            add.Show();
+        }
     }
 }

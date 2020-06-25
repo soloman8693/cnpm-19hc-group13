@@ -82,6 +82,12 @@
     <Compile Include="NG_UI\MAINFORM.Designer.cs">
       <DependentUpon>MAINFORM.cs</DependentUpon>
     </Compile>
+    <Compile Include="ORDER\ADD_ORDER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ORDER\ADD_ORDER.Designer.cs">
+      <DependentUpon>ADD_ORDER.cs</DependentUpon>
+    </Compile>
     <Compile Include="ORDER\ORDER_LIST.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NG_UI\MAINFORM.resx">
       <DependentUpon>MAINFORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ORDER\ADD_ORDER.resx">
+      <DependentUpon>ADD_ORDER.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ORDER\ORDER_LIST.resx">
       <DependentUpon>ORDER_LIST.cs</DependentUpon>

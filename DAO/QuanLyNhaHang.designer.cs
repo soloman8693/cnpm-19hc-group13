@@ -66,7 +66,7 @@ namespace DAO
     #endregion
 		
 		public QuanLyNhaHangDataContext() : 
-				base(global::DAO.Properties.Settings.Default.QUANLYNHAHANGConnectionString2, mappingSource)
+				base(global::DAO.Properties.Settings.Default.DemoConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -202,6 +202,8 @@ namespace DAO
 		
 		private System.Nullable<int> _ID_DRINK;
 		
+		private string _DRINK_NAME;
+		
 		private System.Nullable<int> _AMOUNT_OF_DRINK;
 		
 		private System.Nullable<double> _MONEY;
@@ -222,6 +224,8 @@ namespace DAO
     partial void OnAMOUNT_OF_FOODChanged();
     partial void OnID_DRINKChanging(System.Nullable<int> value);
     partial void OnID_DRINKChanged();
+    partial void OnDRINK_NAMEChanging(string value);
+    partial void OnDRINK_NAMEChanged();
     partial void OnAMOUNT_OF_DRINKChanging(System.Nullable<int> value);
     partial void OnAMOUNT_OF_DRINKChanged();
     partial void OnMONEYChanging(System.Nullable<double> value);
@@ -349,6 +353,26 @@ namespace DAO
 					this._ID_DRINK = value;
 					this.SendPropertyChanged("ID_DRINK");
 					this.OnID_DRINKChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DRINK_NAME", DbType="NVarChar(250)")]
+		public string DRINK_NAME
+		{
+			get
+			{
+				return this._DRINK_NAME;
+			}
+			set
+			{
+				if ((this._DRINK_NAME != value))
+				{
+					this.OnDRINK_NAMEChanging(value);
+					this.SendPropertyChanging();
+					this._DRINK_NAME = value;
+					this.SendPropertyChanged("DRINK_NAME");
+					this.OnDRINK_NAMEChanged();
 				}
 			}
 		}

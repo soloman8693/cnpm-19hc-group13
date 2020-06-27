@@ -30,15 +30,15 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbbFoods = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAmountFoods = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbbDrinks = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtAmountDrinks = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -63,13 +63,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Món ăn";
             // 
-            // comboBox1
+            // cbbFoods
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(32, 94);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(275, 21);
-            this.comboBox1.TabIndex = 2;
+            this.cbbFoods.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbFoods.FormattingEnabled = true;
+            this.cbbFoods.Location = new System.Drawing.Point(32, 94);
+            this.cbbFoods.Name = "cbbFoods";
+            this.cbbFoods.Size = new System.Drawing.Size(275, 21);
+            this.cbbFoods.TabIndex = 2;
             // 
             // label3
             // 
@@ -81,12 +82,13 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Số lượng";
             // 
-            // textBox1
+            // txtAmountFoods
             // 
-            this.textBox1.Location = new System.Drawing.Point(33, 167);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(274, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtAmountFoods.Location = new System.Drawing.Point(33, 167);
+            this.txtAmountFoods.Name = "txtAmountFoods";
+            this.txtAmountFoods.Size = new System.Drawing.Size(274, 20);
+            this.txtAmountFoods.TabIndex = 4;
+            this.txtAmountFoods.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmountFoods_KeyPress);
             // 
             // label4
             // 
@@ -98,13 +100,15 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Nước uống";
             // 
-            // comboBox2
+            // cbbDrinks
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(33, 244);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(274, 21);
-            this.comboBox2.TabIndex = 6;
+            this.cbbDrinks.BackColor = System.Drawing.SystemColors.Window;
+            this.cbbDrinks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbDrinks.FormattingEnabled = true;
+            this.cbbDrinks.Location = new System.Drawing.Point(33, 244);
+            this.cbbDrinks.Name = "cbbDrinks";
+            this.cbbDrinks.Size = new System.Drawing.Size(274, 21);
+            this.cbbDrinks.TabIndex = 6;
             // 
             // label5
             // 
@@ -116,12 +120,13 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Số lượng";
             // 
-            // textBox2
+            // txtAmountDrinks
             // 
-            this.textBox2.Location = new System.Drawing.Point(33, 319);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(274, 20);
-            this.textBox2.TabIndex = 8;
+            this.txtAmountDrinks.Location = new System.Drawing.Point(33, 319);
+            this.txtAmountDrinks.Name = "txtAmountDrinks";
+            this.txtAmountDrinks.Size = new System.Drawing.Size(274, 20);
+            this.txtAmountDrinks.TabIndex = 8;
+            this.txtAmountDrinks.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmountDrinks_KeyPress_1);
             // 
             // label6
             // 
@@ -133,12 +138,13 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Tổng tiền";
             // 
-            // textBox3
+            // txtTotal
             // 
-            this.textBox3.Location = new System.Drawing.Point(33, 397);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(274, 20);
-            this.textBox3.TabIndex = 10;
+            this.txtTotal.Location = new System.Drawing.Point(33, 397);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(274, 20);
+            this.txtTotal.TabIndex = 10;
+            this.txtTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotal_KeyPress);
             // 
             // button1
             // 
@@ -149,6 +155,7 @@
             this.button1.TabIndex = 11;
             this.button1.Text = "Huỷ";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -159,6 +166,7 @@
             this.button2.TabIndex = 12;
             this.button2.Text = "Thêm";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ADD_ORDER
             // 
@@ -167,20 +175,21 @@
             this.ClientSize = new System.Drawing.Size(339, 501);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtAmountDrinks);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cbbDrinks);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtAmountFoods);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbbFoods);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ADD_ORDER";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm order";
+            this.Load += new System.EventHandler(this.ADD_ORDER_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,15 +199,15 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbbFoods;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAmountFoods;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbbDrinks;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtAmountDrinks;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }

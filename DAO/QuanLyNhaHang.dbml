@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QUANLYNHAHANG" Class="QuanLyNhaHangDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-B0IEVJK\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="QUANLYNHAHANGConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-G9MAPAJ\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="DemoConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.DETAIL_ORDER" Member="DETAIL_ORDERs">
     <Type Name="DETAIL_ORDER">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -8,6 +8,7 @@
       <Column Name="FOOD_NAME" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
       <Column Name="AMOUNT_OF_FOOD" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ID_DRINK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRINK_NAME" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
       <Column Name="AMOUNT_OF_DRINK" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MONEY" Type="System.Double" DbType="Float" CanBeNull="true" />
     </Type>

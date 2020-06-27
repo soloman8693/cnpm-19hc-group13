@@ -76,5 +76,59 @@ namespace DAO
             }
             return list;
         }
+
+        public List<FOOD> ListFoods()
+        {
+            List<FOOD> list = new List<FOOD>();
+
+            using(QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            {
+                list = db.FOODs.ToList();
+            }
+
+            return list;
+        }
+
+        public List<DRINK> ListDrinks()
+        {
+            List<DRINK> list = new List<DRINK>();
+
+            using(QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            {
+                list = db.DRINKs.ToList();
+            }
+            return list;
+        }
+
+        public void AddOrder(int idOrder, int idFood, string nameFood, int amountFood, int idDrink, string nameDrink, int amountDrink, double totalMoney) 
+        {
+            using(QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            {
+                DETAIL_ORDER dt = new DETAIL_ORDER();
+
+                dt.ID_ORDER = idOrder;
+                dt.ID_FOOD = idFood;
+                dt.FOOD_NAME = nameFood;
+                dt.AMOUNT_OF_FOOD = amountFood;
+                dt.ID_DRINK = idDrink;
+                dt.DRINK_NAME = nameDrink;
+                dt.AMOUNT_OF_DRINK = amountDrink;
+                dt.MONEY = totalMoney;
+
+                db.DETAIL_ORDERs.InsertOnSubmit(dt);
+                db.SubmitChanges();
+            }
+        }
+
+        public bool DeleteOrderDetail(int id)
+        {
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            {
+                DETAIL_ORDER dt = db.DETAIL_ORDERs.Single(i => i.ID == id);
+                db.DETAIL_ORDERs.DeleteOnSubmit(dt);
+                db.SubmitChanges();
+                return true;
+            }
+        }
     }
 }

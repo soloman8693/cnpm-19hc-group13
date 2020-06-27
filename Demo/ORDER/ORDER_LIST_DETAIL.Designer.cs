@@ -41,8 +41,11 @@
             this.dgvOrderListDetail.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dgvOrderListDetail.Location = new System.Drawing.Point(1, 146);
             this.dgvOrderListDetail.Name = "dgvOrderListDetail";
+            this.dgvOrderListDetail.ReadOnly = true;
             this.dgvOrderListDetail.Size = new System.Drawing.Size(662, 305);
             this.dgvOrderListDetail.TabIndex = 0;
+            this.dgvOrderListDetail.DataSourceChanged += new System.EventHandler(this.dgvOrderListDetail_DataSourceChanged);
+            this.dgvOrderListDetail.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderListDetail_CellDoubleClick);
             // 
             // label1
             // 
@@ -74,6 +77,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Xoá Order";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ORDER_LIST_DETAIL
             // 

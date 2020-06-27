@@ -58,9 +58,9 @@ namespace BUS
             }
         }
 
-        public void AddOrder(int idOrder, int idFood, string nameFood, int amountFood, int idDrink, string nameDrink, int amountDrink, double totalMoney)
+        public void AddOrderDetail(int idOrder, int idFood, string nameFood, int amountFood, int idDrink, string nameDrink, int amountDrink, double totalMoney)
         {
-            DAOOrder.Instance.AddOrder(idOrder, idFood, nameFood, amountFood, idDrink, nameDrink, amountDrink, totalMoney);
+            DAOOrder.Instance.AddOrderDetail(idOrder, idFood, nameFood, amountFood, idDrink, nameDrink, amountDrink, totalMoney);
         }
 
         public bool DeleteOrderDetail(int id)

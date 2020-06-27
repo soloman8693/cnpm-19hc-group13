@@ -100,7 +100,7 @@ namespace DAO
             return list;
         }
 
-        public void AddOrder(int idOrder, int idFood, string nameFood, int amountFood, int idDrink, string nameDrink, int amountDrink, double totalMoney) 
+        public void AddOrderDetail(int idOrder, int idFood, string nameFood, int amountFood, int idDrink, string nameDrink, int amountDrink, double totalMoney) 
         {
             using(QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
             {
@@ -146,6 +146,20 @@ namespace DAO
                 dt.MONEY = total;
                 db.SubmitChanges();
                 return true;
+            }
+        }
+
+        public void AddOrder(int idUser, int idTable)
+        {
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            {
+                ORDER order = new ORDER();
+
+                order.ID_USER = idUser;
+                order.ID_TABLE = idTable;
+                order.TOTAL_MONEY = 0;
+                db.ORDERs.InsertOnSubmit(order);
+                db.SubmitChanges();
             }
         }
     }

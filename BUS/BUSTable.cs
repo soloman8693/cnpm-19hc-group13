@@ -45,6 +45,7 @@ namespace BUS
         {
             DAOTable.Instance.addBookTable(customerName, phone, idTable, date, time, idUser);
             DAOOrder.Instance.AddOrder(idUser, idTable);
+            DAOTable.Instance.updateStatusTableNotAvailable(idTable);
         }
     }
 }

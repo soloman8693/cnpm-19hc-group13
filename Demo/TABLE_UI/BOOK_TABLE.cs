@@ -14,6 +14,7 @@ namespace Demo.TABLE_UI
 {
     public partial class BOOK_TABLE : Form
     {
+        public Action onBookTable;
         public BOOK_TABLE()
         {
             InitializeComponent();
@@ -54,6 +55,8 @@ namespace Demo.TABLE_UI
                     int idUser = DAO.DataSingleton.GetInstance().GetIdUser();
 
                     BUSTable.Instance.addBookTable(nameBook, phone, idTable, date, time.TimeOfDay, idUser);
+                    this.Close();
+                    onBookTable?.Invoke();
                 }
             }
         }

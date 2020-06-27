@@ -59,5 +59,16 @@ namespace DAO
                 db.SubmitChanges();
             }
         }
+
+        public bool updateStatusTableNotAvailable(int idTable)
+        {
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            {
+                TABLE tb = db.TABLEs.Single(p => p.ID == idTable);
+                tb.STATUS = 0;
+                db.SubmitChanges();
+                return true;
+            }
+        } 
     }
 }

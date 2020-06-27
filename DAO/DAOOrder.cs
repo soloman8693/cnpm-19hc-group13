@@ -61,7 +61,7 @@ namespace DAO
                             ID_USER = (int)order.ID_USER,
                             FULL_NAME_USER = user.FULL_NAME,
                             TABLE_NAME = (int)table.TABLE_NAME,
-                            TOTAL_MONEY = (double)order.TOTAL_MONEY
+                            TOTAL_MONEY = db.DETAIL_ORDERs.Where(od => od.ID_ORDER == order.ID).Sum(a => a.MONEY).GetValueOrDefault()
                         }).ToList();
             }
             return list;

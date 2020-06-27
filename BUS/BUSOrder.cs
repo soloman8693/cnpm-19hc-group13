@@ -67,5 +67,10 @@ namespace BUS
         {
             return DAOOrder.Instance.DeleteOrderDetail(id);
         }
+
+        public bool UpdateOrderDetail(int id, int idFood, string nameFood, int amountFood, int idDrink, string nameDrink, int amountDrink, double total)
+        {
+            return DAOOrder.Instance.UpdateOrderDetail(id, idFood, nameFood, amountFood, idDrink, nameDrink, amountDrink, total);        
+        }
     }
 }

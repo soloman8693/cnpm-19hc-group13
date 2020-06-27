@@ -130,5 +130,23 @@ namespace DAO
                 return true;
             }
         }
+
+        public bool UpdateOrderDetail(int id, int idFood, string nameFood, int amountFood, int idDrink, string nameDrink, int amountDrink, double total)
+        {
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            {
+                DETAIL_ORDER dt = db.DETAIL_ORDERs.Single(i => i.ID == id);
+
+                dt.ID_FOOD = idFood;
+                dt.FOOD_NAME = nameFood;
+                dt.AMOUNT_OF_FOOD = amountFood;
+                dt.ID_DRINK = idDrink;
+                dt.DRINK_NAME = nameDrink;
+                dt.AMOUNT_OF_DRINK = amountDrink;
+                dt.MONEY = total;
+                db.SubmitChanges();
+                return true;
+            }
+        }
     }
 }

@@ -88,6 +88,12 @@
     <Compile Include="ORDER\ADD_ORDER.Designer.cs">
       <DependentUpon>ADD_ORDER.cs</DependentUpon>
     </Compile>
+    <Compile Include="ORDER\EDIT_ORDER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ORDER\EDIT_ORDER.Designer.cs">
+      <DependentUpon>EDIT_ORDER.cs</DependentUpon>
+    </Compile>
     <Compile Include="ORDER\ORDER_LIST.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ORDER\ADD_ORDER.resx">
       <DependentUpon>ADD_ORDER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ORDER\EDIT_ORDER.resx">
+      <DependentUpon>EDIT_ORDER.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ORDER\ORDER_LIST.resx">
       <DependentUpon>ORDER_LIST.cs</DependentUpon>

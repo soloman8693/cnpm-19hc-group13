@@ -50,11 +50,13 @@ namespace Demo.ORTHER
 
         private void dgvOrder_DataSourceChanged(object sender, EventArgs e)
         {
-            dgvOrder.Columns[1].Visible = false ;
+            dgvOrder.Columns[1].Visible = false;
             dgvOrder.Columns[2].Visible = false;
             dgvOrder.Columns[3].HeaderText = "Người thực hiện";
             dgvOrder.Columns[4].HeaderText = "Tên bàn";
             dgvOrder.Columns[5].HeaderText = "Tổng tiền";
+            dgvOrder.Columns[6].Visible = false;
+            dgvOrder.Columns[7].HeaderText = "Trạng thái";
         }
 
         private void dgvOrder_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

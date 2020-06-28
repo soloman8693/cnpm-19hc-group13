@@ -33,9 +33,6 @@ namespace DAO
     partial void InsertDETAIL_ORDER(DETAIL_ORDER instance);
     partial void UpdateDETAIL_ORDER(DETAIL_ORDER instance);
     partial void DeleteDETAIL_ORDER(DETAIL_ORDER instance);
-    partial void InsertTABLE(TABLE instance);
-    partial void UpdateTABLE(TABLE instance);
-    partial void DeleteTABLE(TABLE instance);
     partial void InsertDRINK(DRINK instance);
     partial void UpdateDRINK(DRINK instance);
     partial void DeleteDRINK(DRINK instance);
@@ -51,22 +48,25 @@ namespace DAO
     partial void InsertMENU(MENU instance);
     partial void UpdateMENU(MENU instance);
     partial void DeleteMENU(MENU instance);
+    partial void InsertORDER(ORDER instance);
+    partial void UpdateORDER(ORDER instance);
+    partial void DeleteORDER(ORDER instance);
     partial void InsertPERMISSION(PERMISSION instance);
     partial void UpdatePERMISSION(PERMISSION instance);
     partial void DeletePERMISSION(PERMISSION instance);
     partial void InsertRESERVATION(RESERVATION instance);
     partial void UpdateRESERVATION(RESERVATION instance);
     partial void DeleteRESERVATION(RESERVATION instance);
+    partial void InsertTABLE(TABLE instance);
+    partial void UpdateTABLE(TABLE instance);
+    partial void DeleteTABLE(TABLE instance);
     partial void InsertUSER(USER instance);
     partial void UpdateUSER(USER instance);
     partial void DeleteUSER(USER instance);
-    partial void InsertORDER(ORDER instance);
-    partial void UpdateORDER(ORDER instance);
-    partial void DeleteORDER(ORDER instance);
     #endregion
 		
 		public QuanLyNhaHangDataContext() : 
-				base(global::DAO.Properties.Settings.Default.QUANLYNHAHANGConnectionString2, mappingSource)
+				base(global::DAO.Properties.Settings.Default.DemoConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -100,14 +100,6 @@ namespace DAO
 			get
 			{
 				return this.GetTable<DETAIL_ORDER>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TABLE> TABLEs
-		{
-			get
-			{
-				return this.GetTable<TABLE>();
 			}
 		}
 		
@@ -151,6 +143,14 @@ namespace DAO
 			}
 		}
 		
+		public System.Data.Linq.Table<ORDER> ORDERs
+		{
+			get
+			{
+				return this.GetTable<ORDER>();
+			}
+		}
+		
 		public System.Data.Linq.Table<PERMISSION> PERMISSIONs
 		{
 			get
@@ -167,19 +167,19 @@ namespace DAO
 			}
 		}
 		
+		public System.Data.Linq.Table<TABLE> TABLEs
+		{
+			get
+			{
+				return this.GetTable<TABLE>();
+			}
+		}
+		
 		public System.Data.Linq.Table<USER> USERs
 		{
 			get
 			{
 				return this.GetTable<USER>();
-			}
-		}
-		
-		public System.Data.Linq.Table<ORDER> ORDERs
-		{
-			get
-			{
-				return this.GetTable<ORDER>();
 			}
 		}
 	}
@@ -202,11 +202,11 @@ namespace DAO
 		
 		private System.Nullable<int> _ID_DRINK;
 		
+		private string _DRINK_NAME;
+		
 		private System.Nullable<int> _AMOUNT_OF_DRINK;
 		
 		private System.Nullable<double> _MONEY;
-		
-		private string _DRINK_NAME;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -224,12 +224,12 @@ namespace DAO
     partial void OnAMOUNT_OF_FOODChanged();
     partial void OnID_DRINKChanging(System.Nullable<int> value);
     partial void OnID_DRINKChanged();
+    partial void OnDRINK_NAMEChanging(string value);
+    partial void OnDRINK_NAMEChanged();
     partial void OnAMOUNT_OF_DRINKChanging(System.Nullable<int> value);
     partial void OnAMOUNT_OF_DRINKChanged();
     partial void OnMONEYChanging(System.Nullable<double> value);
     partial void OnMONEYChanged();
-    partial void OnDRINK_NAMEChanging(string value);
-    partial void OnDRINK_NAMEChanged();
     #endregion
 		
 		public DETAIL_ORDER()
@@ -357,6 +357,26 @@ namespace DAO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DRINK_NAME", DbType="NVarChar(250)")]
+		public string DRINK_NAME
+		{
+			get
+			{
+				return this._DRINK_NAME;
+			}
+			set
+			{
+				if ((this._DRINK_NAME != value))
+				{
+					this.OnDRINK_NAMEChanging(value);
+					this.SendPropertyChanging();
+					this._DRINK_NAME = value;
+					this.SendPropertyChanged("DRINK_NAME");
+					this.OnDRINK_NAMEChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AMOUNT_OF_DRINK", DbType="Int")]
 		public System.Nullable<int> AMOUNT_OF_DRINK
 		{
@@ -393,136 +413,6 @@ namespace DAO
 					this._MONEY = value;
 					this.SendPropertyChanged("MONEY");
 					this.OnMONEYChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DRINK_NAME", DbType="NVarChar(250)")]
-		public string DRINK_NAME
-		{
-			get
-			{
-				return this._DRINK_NAME;
-			}
-			set
-			{
-				if ((this._DRINK_NAME != value))
-				{
-					this.OnDRINK_NAMEChanging(value);
-					this.SendPropertyChanging();
-					this._DRINK_NAME = value;
-					this.SendPropertyChanged("DRINK_NAME");
-					this.OnDRINK_NAMEChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[TABLE]")]
-	public partial class TABLE : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private System.Nullable<int> _TABLE_NAME;
-		
-		private System.Nullable<int> _STATUS;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnTABLE_NAMEChanging(System.Nullable<int> value);
-    partial void OnTABLE_NAMEChanged();
-    partial void OnSTATUSChanging(System.Nullable<int> value);
-    partial void OnSTATUSChanged();
-    #endregion
-		
-		public TABLE()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TABLE_NAME", DbType="Int")]
-		public System.Nullable<int> TABLE_NAME
-		{
-			get
-			{
-				return this._TABLE_NAME;
-			}
-			set
-			{
-				if ((this._TABLE_NAME != value))
-				{
-					this.OnTABLE_NAMEChanging(value);
-					this.SendPropertyChanging();
-					this._TABLE_NAME = value;
-					this.SendPropertyChanged("TABLE_NAME");
-					this.OnTABLE_NAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STATUS", DbType="Int")]
-		public System.Nullable<int> STATUS
-		{
-			get
-			{
-				return this._STATUS;
-			}
-			set
-			{
-				if ((this._STATUS != value))
-				{
-					this.OnSTATUSChanging(value);
-					this.SendPropertyChanging();
-					this._STATUS = value;
-					this.SendPropertyChanged("STATUS");
-					this.OnSTATUSChanged();
 				}
 			}
 		}
@@ -1218,6 +1108,164 @@ namespace DAO
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[ORDER]")]
+	public partial class ORDER : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _ID_USER;
+		
+		private System.Nullable<int> _ID_TABLE;
+		
+		private System.Nullable<double> _TOTAL_MONEY;
+		
+		private System.Nullable<int> _PAY;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnID_USERChanging(System.Nullable<int> value);
+    partial void OnID_USERChanged();
+    partial void OnID_TABLEChanging(System.Nullable<int> value);
+    partial void OnID_TABLEChanged();
+    partial void OnTOTAL_MONEYChanging(System.Nullable<double> value);
+    partial void OnTOTAL_MONEYChanged();
+    partial void OnPAYChanging(System.Nullable<int> value);
+    partial void OnPAYChanged();
+    #endregion
+		
+		public ORDER()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_USER", DbType="Int")]
+		public System.Nullable<int> ID_USER
+		{
+			get
+			{
+				return this._ID_USER;
+			}
+			set
+			{
+				if ((this._ID_USER != value))
+				{
+					this.OnID_USERChanging(value);
+					this.SendPropertyChanging();
+					this._ID_USER = value;
+					this.SendPropertyChanged("ID_USER");
+					this.OnID_USERChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_TABLE", DbType="Int")]
+		public System.Nullable<int> ID_TABLE
+		{
+			get
+			{
+				return this._ID_TABLE;
+			}
+			set
+			{
+				if ((this._ID_TABLE != value))
+				{
+					this.OnID_TABLEChanging(value);
+					this.SendPropertyChanging();
+					this._ID_TABLE = value;
+					this.SendPropertyChanged("ID_TABLE");
+					this.OnID_TABLEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOTAL_MONEY", DbType="Float")]
+		public System.Nullable<double> TOTAL_MONEY
+		{
+			get
+			{
+				return this._TOTAL_MONEY;
+			}
+			set
+			{
+				if ((this._TOTAL_MONEY != value))
+				{
+					this.OnTOTAL_MONEYChanging(value);
+					this.SendPropertyChanging();
+					this._TOTAL_MONEY = value;
+					this.SendPropertyChanged("TOTAL_MONEY");
+					this.OnTOTAL_MONEYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PAY", DbType="Int")]
+		public System.Nullable<int> PAY
+		{
+			get
+			{
+				return this._PAY;
+			}
+			set
+			{
+				if ((this._PAY != value))
+				{
+					this.OnPAYChanging(value);
+					this.SendPropertyChanging();
+					this._PAY = value;
+					this.SendPropertyChanged("PAY");
+					this.OnPAYChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PERMISSION")]
 	public partial class PERMISSION : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1534,6 +1582,116 @@ namespace DAO
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[TABLE]")]
+	public partial class TABLE : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _TABLE_NAME;
+		
+		private System.Nullable<int> _STATUS;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnTABLE_NAMEChanging(System.Nullable<int> value);
+    partial void OnTABLE_NAMEChanged();
+    partial void OnSTATUSChanging(System.Nullable<int> value);
+    partial void OnSTATUSChanged();
+    #endregion
+		
+		public TABLE()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TABLE_NAME", DbType="Int")]
+		public System.Nullable<int> TABLE_NAME
+		{
+			get
+			{
+				return this._TABLE_NAME;
+			}
+			set
+			{
+				if ((this._TABLE_NAME != value))
+				{
+					this.OnTABLE_NAMEChanging(value);
+					this.SendPropertyChanging();
+					this._TABLE_NAME = value;
+					this.SendPropertyChanged("TABLE_NAME");
+					this.OnTABLE_NAMEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STATUS", DbType="Int")]
+		public System.Nullable<int> STATUS
+		{
+			get
+			{
+				return this._STATUS;
+			}
+			set
+			{
+				if ((this._STATUS != value))
+				{
+					this.OnSTATUSChanging(value);
+					this.SendPropertyChanging();
+					this._STATUS = value;
+					this.SendPropertyChanged("STATUS");
+					this.OnSTATUSChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[USER]")]
 	public partial class USER : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1739,164 +1897,6 @@ namespace DAO
 					this._REMEMBER = value;
 					this.SendPropertyChanged("REMEMBER");
 					this.OnREMEMBERChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[ORDER]")]
-	public partial class ORDER : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private System.Nullable<int> _ID_USER;
-		
-		private System.Nullable<int> _ID_TABLE;
-		
-		private System.Nullable<double> _TOTAL_MONEY;
-		
-		private System.Nullable<int> _PAY;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnID_USERChanging(System.Nullable<int> value);
-    partial void OnID_USERChanged();
-    partial void OnID_TABLEChanging(System.Nullable<int> value);
-    partial void OnID_TABLEChanged();
-    partial void OnTOTAL_MONEYChanging(System.Nullable<double> value);
-    partial void OnTOTAL_MONEYChanged();
-    partial void OnPAYChanging(System.Nullable<int> value);
-    partial void OnPAYChanged();
-    #endregion
-		
-		public ORDER()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_USER", DbType="Int")]
-		public System.Nullable<int> ID_USER
-		{
-			get
-			{
-				return this._ID_USER;
-			}
-			set
-			{
-				if ((this._ID_USER != value))
-				{
-					this.OnID_USERChanging(value);
-					this.SendPropertyChanging();
-					this._ID_USER = value;
-					this.SendPropertyChanged("ID_USER");
-					this.OnID_USERChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_TABLE", DbType="Int")]
-		public System.Nullable<int> ID_TABLE
-		{
-			get
-			{
-				return this._ID_TABLE;
-			}
-			set
-			{
-				if ((this._ID_TABLE != value))
-				{
-					this.OnID_TABLEChanging(value);
-					this.SendPropertyChanging();
-					this._ID_TABLE = value;
-					this.SendPropertyChanged("ID_TABLE");
-					this.OnID_TABLEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TOTAL_MONEY", DbType="Float")]
-		public System.Nullable<double> TOTAL_MONEY
-		{
-			get
-			{
-				return this._TOTAL_MONEY;
-			}
-			set
-			{
-				if ((this._TOTAL_MONEY != value))
-				{
-					this.OnTOTAL_MONEYChanging(value);
-					this.SendPropertyChanging();
-					this._TOTAL_MONEY = value;
-					this.SendPropertyChanged("TOTAL_MONEY");
-					this.OnTOTAL_MONEYChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PAY", DbType="Int")]
-		public System.Nullable<int> PAY
-		{
-			get
-			{
-				return this._PAY;
-			}
-			set
-			{
-				if ((this._PAY != value))
-				{
-					this.OnPAYChanging(value);
-					this.SendPropertyChanging();
-					this._PAY = value;
-					this.SendPropertyChanged("PAY");
-					this.OnPAYChanged();
 				}
 			}
 		}

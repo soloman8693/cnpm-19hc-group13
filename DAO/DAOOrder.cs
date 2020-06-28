@@ -81,7 +81,7 @@ namespace DAO
         {
             List<FOOD> list = new List<FOOD>();
 
-            using(QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
             {
                 list = db.FOODs.ToList();
             }
@@ -93,16 +93,17 @@ namespace DAO
         {
             List<DRINK> list = new List<DRINK>();
 
-            using(QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
             {
                 list = db.DRINKs.ToList();
             }
             return list;
         }
 
+        public void AddOrder(int idOrder, int idFood, string nameFood, int amountFood, int idDrink, string nameDrink, int amountDrink, double totalMoney)
         public void AddOrderDetail(int idOrder, int idFood, string nameFood, int amountFood, int idDrink, string nameDrink, int amountDrink, double totalMoney) 
         {
-            using(QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
             {
                 DETAIL_ORDER dt = new DETAIL_ORDER();
 
@@ -149,6 +150,13 @@ namespace DAO
             }
         }
 
+        public List<DETAIL_ORDER> getListDetailOrderByTableID(int tableID)
+        {
+            List<DETAIL_ORDER> listOrder = new List<DETAIL_ORDER>();
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            {
+                listOrder = (from o in db.ORDERs join dt in db.DETAIL_ORDERs on o.ID equals dt.ID_ORDER where o.ID_TABLE == tableID && o.PAY == 0 select dt).ToList();
+                return listOrder;
         public void AddOrder(int idUser, int idTable)
         {
             using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())

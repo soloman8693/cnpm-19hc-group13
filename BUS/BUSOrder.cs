@@ -26,7 +26,7 @@ namespace BUS
 
         public void OrderList(DataGridView dataGridView)
         {
-            dataGridView.DataSource =  DAOOrder.Instance.OrderList();
+            dataGridView.DataSource = DAOOrder.Instance.OrderList();
         }
 
         public void OrderListDetail(DataGridView dataGridView, int id)
@@ -70,7 +70,12 @@ namespace BUS
 
         public bool UpdateOrderDetail(int id, int idFood, string nameFood, int amountFood, int idDrink, string nameDrink, int amountDrink, double total)
         {
-            return DAOOrder.Instance.UpdateOrderDetail(id, idFood, nameFood, amountFood, idDrink, nameDrink, amountDrink, total);        
+            return DAOOrder.Instance.UpdateOrderDetail(id, idFood, nameFood, amountFood, idDrink, nameDrink, amountDrink, total);
+        }
+
+        public List<DETAIL_ORDER> getListDetailOrderByTableID(int tableID)
+        {
+            return DAOOrder.Instance.getListDetailOrderByTableID(tableID);
         }
     }
 }

@@ -91,6 +91,7 @@
             this.Name = "ORDER_LIST_DETAIL";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh sách chi tiết order";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ORDER_LIST_DETAIL_FormClosing);
             this.Load += new System.EventHandler(this.ORDER_LIST_DETAIL_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderListDetail)).EndInit();
             this.ResumeLayout(false);

@@ -61,7 +61,7 @@ namespace DAO
                             ID_USER = (int)order.ID_USER,
                             FULL_NAME_USER = user.FULL_NAME,
                             TABLE_NAME = (int)table.TABLE_NAME,
-                            TOTAL_MONEY = (double)order.TOTAL_MONEY
+                            TOTAL_MONEY = db.DETAIL_ORDERs.Where(od => od.ID_ORDER == order.ID).Sum(a => a.MONEY).GetValueOrDefault()
                         }).ToList();
             }
             return list;
@@ -101,6 +101,7 @@ namespace DAO
         }
 
         public void AddOrder(int idOrder, int idFood, string nameFood, int amountFood, int idDrink, string nameDrink, int amountDrink, double totalMoney)
+        public void AddOrderDetail(int idOrder, int idFood, string nameFood, int amountFood, int idDrink, string nameDrink, int amountDrink, double totalMoney) 
         {
             using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
             {
@@ -156,6 +157,17 @@ namespace DAO
             {
                 listOrder = (from o in db.ORDERs join dt in db.DETAIL_ORDERs on o.ID equals dt.ID_ORDER where o.ID_TABLE == tableID && o.PAY == 0 select dt).ToList();
                 return listOrder;
+        public void AddOrder(int idUser, int idTable)
+        {
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            {
+                ORDER order = new ORDER();
+
+                order.ID_USER = idUser;
+                order.ID_TABLE = idTable;
+                order.TOTAL_MONEY = 0;
+                db.ORDERs.InsertOnSubmit(order);
+                db.SubmitChanges();
             }
         }
     }

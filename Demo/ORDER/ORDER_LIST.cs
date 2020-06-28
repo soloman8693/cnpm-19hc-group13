@@ -37,11 +37,15 @@ namespace Demo.ORTHER
             TABLE_UI.BOOK_TABLE book_table = new TABLE_UI.BOOK_TABLE();
             book_table.Show();
         }
-
-        private void ORDER_LIST_Load(object sender, EventArgs e)
+        
+        public void reloadData()
         {
             BUSOrder.Instance.OrderList(dgvOrder);
             dgvOrder.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+        private void ORDER_LIST_Load(object sender, EventArgs e)
+        {
+            this.reloadData();
         }
 
         private void dgvOrder_DataSourceChanged(object sender, EventArgs e)
@@ -61,6 +65,7 @@ namespace Demo.ORTHER
                 DAOOrder.Instance.SetIdOrder(id);
 
                 ORDER_LIST_DETAIL dt = new ORDER_LIST_DETAIL();
+                dt.onReloadData += reloadData;
                 dt.Show();
             }
         }

@@ -49,6 +49,10 @@
             this.DRINK_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AMOUNT_OF_DRINK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MONEY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FOOD_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DRINK_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_ORDER = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgListOrder)).BeginInit();
@@ -159,7 +163,11 @@
             this.AMOUNT_OF_FOOD,
             this.DRINK_NAME,
             this.AMOUNT_OF_DRINK,
-            this.MONEY});
+            this.MONEY,
+            this.ID,
+            this.FOOD_ID,
+            this.DRINK_ID,
+            this.ID_ORDER});
             this.dtgListOrder.Location = new System.Drawing.Point(6, 45);
             this.dtgListOrder.Name = "dtgListOrder";
             this.dtgListOrder.RowTemplate.Height = 24;
@@ -209,6 +217,7 @@
             // 
             // FOOD_NAME
             // 
+            this.FOOD_NAME.DataPropertyName = "FOOD_NAME";
             this.FOOD_NAME.HeaderText = "THỨC ĂN";
             this.FOOD_NAME.Name = "FOOD_NAME";
             this.FOOD_NAME.ReadOnly = true;
@@ -216,6 +225,7 @@
             // 
             // AMOUNT_OF_FOOD
             // 
+            this.AMOUNT_OF_FOOD.DataPropertyName = "AMOUNT_OF_FOOD";
             this.AMOUNT_OF_FOOD.HeaderText = "SL";
             this.AMOUNT_OF_FOOD.Name = "AMOUNT_OF_FOOD";
             this.AMOUNT_OF_FOOD.ReadOnly = true;
@@ -223,6 +233,7 @@
             // 
             // DRINK_NAME
             // 
+            this.DRINK_NAME.DataPropertyName = "DRINK_NAME";
             this.DRINK_NAME.HeaderText = "NƯỚC";
             this.DRINK_NAME.Name = "DRINK_NAME";
             this.DRINK_NAME.ReadOnly = true;
@@ -230,15 +241,41 @@
             // 
             // AMOUNT_OF_DRINK
             // 
+            this.AMOUNT_OF_DRINK.DataPropertyName = "AMOUNT_OF_DRINK";
             this.AMOUNT_OF_DRINK.HeaderText = "SL";
             this.AMOUNT_OF_DRINK.Name = "AMOUNT_OF_DRINK";
             this.AMOUNT_OF_DRINK.Width = 30;
             // 
             // MONEY
             // 
+            this.MONEY.DataPropertyName = "MONEY";
             this.MONEY.HeaderText = "TỔNG TIỀN";
             this.MONEY.Name = "MONEY";
             this.MONEY.ReadOnly = true;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // FOOD_ID
+            // 
+            this.FOOD_ID.DataPropertyName = "ID_FOOD";
+            this.FOOD_ID.HeaderText = "FOOD_ID";
+            this.FOOD_ID.Name = "FOOD_ID";
+            // 
+            // DRINK_ID
+            // 
+            this.DRINK_ID.DataPropertyName = "ID_DRINK";
+            this.DRINK_ID.HeaderText = "DRINK_ID";
+            this.DRINK_ID.Name = "DRINK_ID";
+            // 
+            // ID_ORDER
+            // 
+            this.ID_ORDER.DataPropertyName = "ID_ORDER";
+            this.ID_ORDER.HeaderText = "ID_ORDER";
+            this.ID_ORDER.Name = "ID_ORDER";
             // 
             // ACTION_OF_TABLE
             // 
@@ -289,5 +326,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DRINK_NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn AMOUNT_OF_DRINK;
         private System.Windows.Forms.DataGridViewTextBoxColumn MONEY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FOOD_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DRINK_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_ORDER;
     }
 }

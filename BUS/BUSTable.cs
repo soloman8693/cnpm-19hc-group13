@@ -47,6 +47,7 @@ namespace BUS
         public void AddNewTable(int tableName)
         {
             DAOTable.Instance.AddNewTable(tableName);
+        }
         public void GetTableAvailable(ComboBox cbb, string type, int id)
         {
             cbb.DataSource = DAOTable.Instance.GetTableAvailable();

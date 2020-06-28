@@ -29,6 +29,13 @@ namespace Demo.TABLE_UI
             txtTableName.Text = currentTalbe.TABLE_NAME.ToString();
             cbStatus.Text = currentTalbe.STATUS.ToString();
             dtgListOrder.DataSource = BUSOrder.Instance.getListDetailOrderByTableID(currentTalbe.ID);
+            for (int i = 0; i < dtgListOrder.Rows.Count; i++) {
+                dtgListOrder.Rows[i].Cells[0].Value = i + 1;
+            }
+            this.dtgListOrder.Columns["FOOD_ID"].Visible = false;
+            this.dtgListOrder.Columns["DRINK_ID"].Visible = false;
+            this.dtgListOrder.Columns["ID_ORDER"].Visible = false;
+            this.dtgListOrder.Columns["ID"].Visible = false;
         }
 
         private void setDataForStatusCB() {

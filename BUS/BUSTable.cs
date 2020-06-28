@@ -27,5 +27,25 @@ namespace BUS
         {
             return DAOTable.Instance.GetListTables();
         }
+
+        public void UpdateTable(TABLE table)
+        {
+            DAOTable.Instance.UpdateTable(table);
+        }
+
+        public void DeleteTable(TABLE table)
+        {
+            DAOTable.Instance.DeleteTable(table);
+        }
+
+        public TABLE GetTableByName(int tableName)
+        {
+            return DAOTable.Instance.GetTableByName(tableName);
+        }
+
+        public void AddNewTable(int tableName)
+        {
+            DAOTable.Instance.AddNewTable(tableName);
+        }
     }
 }

@@ -90,5 +90,19 @@ namespace Demo.NG_UI
             TABLE_UI.BOOK_TABLE bookTable = new TABLE_UI.BOOK_TABLE();
             bookTable.Show();
         }
+
+        private void btnUserName_Click(object sender, EventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            this.Hide();
+            login.Show();
+        }
+
+        private void bànToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TABLE_UI.frm_ListTable frm_ListTable = new TABLE_UI.frm_ListTable();
+            this.Hide();
+            frm_ListTable.Show();
+        }
     }
 }

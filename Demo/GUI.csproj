@@ -121,11 +121,29 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignIn Static User\StaticUser.cs" />
+    <Compile Include="TABLE_UI\ACTION_OF_TABLE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TABLE_UI\ACTION_OF_TABLE.Designer.cs">
+      <DependentUpon>ACTION_OF_TABLE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TABLE_UI\ADD_TABLE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TABLE_UI\ADD_TABLE.Designer.cs">
+      <DependentUpon>ADD_TABLE.cs</DependentUpon>
+    </Compile>
     <Compile Include="TABLE_UI\BOOK_TABLE.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TABLE_UI\BOOK_TABLE.Designer.cs">
       <DependentUpon>BOOK_TABLE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TABLE_UI\LIST_TABLE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TABLE_UI\LIST_TABLE.Designer.cs">
+      <DependentUpon>LIST_TABLE.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="EMPLOYEE_UI\Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
@@ -172,8 +190,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TABLE_UI\ACTION_OF_TABLE.resx">
+      <DependentUpon>ACTION_OF_TABLE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TABLE_UI\ADD_TABLE.resx">
+      <DependentUpon>ADD_TABLE.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TABLE_UI\BOOK_TABLE.resx">
       <DependentUpon>BOOK_TABLE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TABLE_UI\LIST_TABLE.resx">
+      <DependentUpon>LIST_TABLE.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

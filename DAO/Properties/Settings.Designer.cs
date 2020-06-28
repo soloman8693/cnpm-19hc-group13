@@ -12,7 +12,7 @@ namespace DAO.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.6.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,8 +26,8 @@ namespace DAO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-B0IEVJK\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
-            "ecurity=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-PHVNS5LA;Initial Catalog=QUANLYNHAHANG;Integrated Security=Tru" +
+            "e")]
         public string QUANLYNHAHANGConnectionString2 {
             get {
                 return ((string)(this["QUANLYNHAHANGConnectionString2"]));
@@ -37,8 +37,8 @@ namespace DAO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-B0IEVJK\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
-            "ecurity=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-PHVNS5LA;Initial Catalog=QUANLYNHAHANG;Integrated Security=Tru" +
+            "e")]
         public string DataSourceConnectionString {
             get {
                 return ((string)(this["DataSourceConnectionString"]));
@@ -48,8 +48,8 @@ namespace DAO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-B0IEVJK\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
-            "ecurity=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-PHVNS5LA;Initial Catalog=QUANLYNHAHANG;Integrated Security=Tru" +
+            "e")]
         public string DemoConnectionString {
             get {
                 return ((string)(this["DemoConnectionString"]));
@@ -59,8 +59,8 @@ namespace DAO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-B0IEVJK\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
-            "ecurity=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-PHVNS5LA;Initial Catalog=QUANLYNHAHANG;Integrated Security=Tru" +
+            "e")]
         public string QUANLYNHAHANGConnectionString {
             get {
                 return ((string)(this["QUANLYNHAHANGConnectionString"]));
@@ -70,8 +70,8 @@ namespace DAO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-B0IEVJK\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
-            "ecurity=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-PHVNS5LA;Initial Catalog=QUANLYNHAHANG;Integrated Security=Tru" +
+            "e")]
         public string QUANLYNHAHANGConnectionString1 {
             get {
                 return ((string)(this["QUANLYNHAHANGConnectionString1"]));

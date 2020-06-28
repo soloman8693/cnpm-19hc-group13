@@ -16,6 +16,10 @@ namespace DAO
         public string FULL_NAME_USER { get; set; }
         public int TABLE_NAME { get; set; }
         public double TOTAL_MONEY { get; set; }
+
+        public int PAY { get; set; }
+
+        public string STATUS_PAY { get; set; }
     }
 
 
@@ -61,7 +65,9 @@ namespace DAO
                             ID_USER = (int)order.ID_USER,
                             FULL_NAME_USER = user.FULL_NAME,
                             TABLE_NAME = (int)table.TABLE_NAME,
-                            TOTAL_MONEY = db.DETAIL_ORDERs.Where(od => od.ID_ORDER == order.ID).Sum(a => a.MONEY).GetValueOrDefault()
+                            TOTAL_MONEY = db.DETAIL_ORDERs.Where(od => od.ID_ORDER == order.ID).Sum(a => a.MONEY).GetValueOrDefault(),
+                            PAY = (int)order.PAY,
+                            STATUS_PAY = (order.PAY == 0) ? "Chưa thanh toán" : "Đã thanh toán"
                         }).ToList();
             }
             return list;
@@ -169,6 +175,7 @@ namespace DAO
                 order.ID_USER = idUser;
                 order.ID_TABLE = idTable;
                 order.TOTAL_MONEY = 0;
+                order.PAY = 0;
                 db.ORDERs.InsertOnSubmit(order);
                 db.SubmitChanges();
             }

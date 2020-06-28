@@ -14,6 +14,7 @@ namespace Demo.ORDER
 {
     public partial class ORDER_LIST_DETAIL : Form
     {
+        public Action onReloadData;
         public ORDER_LIST_DETAIL()
         {
             InitializeComponent();
@@ -76,6 +77,11 @@ namespace Demo.ORDER
             editOrder.txtTotal.Text = this.dgvOrderListDetail.CurrentRow.Cells[8].Value.ToString();
             editOrder.onUpdateData += loadData;
             editOrder.ShowDialog();
+        }
+
+        private void ORDER_LIST_DETAIL_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            onReloadData?.Invoke();
         }
     }
 }

@@ -73,7 +73,7 @@ namespace DAO
             List<TABLE> list = new List<TABLE>();
             using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
             {
-                list = db.TABLEs.Where(t => t.STATUS == 1).ToList();
+                list = db.TABLEs.Where(t => t.STATUS == 0).ToList();
             }
             return list;
         }
@@ -102,7 +102,7 @@ namespace DAO
             using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
             {
                 TABLE tb = db.TABLEs.Single(p => p.ID == idTable);
-                tb.STATUS = 0;
+                tb.STATUS = 1;
                 db.SubmitChanges();
                 return true;
             }

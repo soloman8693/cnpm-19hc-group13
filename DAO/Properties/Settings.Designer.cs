@@ -26,8 +26,8 @@ namespace DAO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-PHVNS5LA;Initial Catalog=QUANLYNHAHANG;Integrated Security=Tru" +
-            "e")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-G9MAPAJ\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
+            "ecurity=True")]
         public string QUANLYNHAHANGConnectionString2 {
             get {
                 return ((string)(this["QUANLYNHAHANGConnectionString2"]));
@@ -37,8 +37,8 @@ namespace DAO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-PHVNS5LA;Initial Catalog=QUANLYNHAHANG;Integrated Security=Tru" +
-            "e")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-G9MAPAJ\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
+            "ecurity=True")]
         public string DataSourceConnectionString {
             get {
                 return ((string)(this["DataSourceConnectionString"]));
@@ -48,8 +48,8 @@ namespace DAO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-PHVNS5LA;Initial Catalog=QUANLYNHAHANG;Integrated Security=Tru" +
-            "e")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-G9MAPAJ\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
+            "ecurity=True")]
         public string DemoConnectionString {
             get {
                 return ((string)(this["DemoConnectionString"]));
@@ -59,8 +59,8 @@ namespace DAO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-PHVNS5LA;Initial Catalog=QUANLYNHAHANG;Integrated Security=Tru" +
-            "e")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-G9MAPAJ\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
+            "ecurity=True")]
         public string QUANLYNHAHANGConnectionString {
             get {
                 return ((string)(this["QUANLYNHAHANGConnectionString"]));
@@ -70,8 +70,8 @@ namespace DAO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-PHVNS5LA;Initial Catalog=QUANLYNHAHANG;Integrated Security=Tru" +
-            "e")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-G9MAPAJ\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANG;Integrated S" +
+            "ecurity=True")]
         public string QUANLYNHAHANGConnectionString1 {
             get {
                 return ((string)(this["QUANLYNHAHANGConnectionString1"]));

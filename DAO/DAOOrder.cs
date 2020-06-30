@@ -180,5 +180,40 @@ namespace DAO
                 db.SubmitChanges();
             }
         }
+        public double TotalMoney(int tableID)
+        {
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            {
+                double totalMoney = 0;
+                ORDER order = new ORDER();
+                List<DETAIL_ORDER> listOrder = new List<DETAIL_ORDER>();
+                listOrder = getListDetailOrderByTableID(tableID);
+                foreach (var dt in listOrder)
+                {
+                    totalMoney += (double)dt.MONEY;
+                }
+                order = (from o in db.ORDERs where o.ID_TABLE == tableID && o.PAY == 0 select o).FirstOrDefault();
+                if (order != null  && order.TOTAL_MONEY != totalMoney ) {
+                    order.TOTAL_MONEY = totalMoney;
+                    db.SubmitChanges();
+                }
+                return totalMoney;
+                
+            }
+        }
+
+        public void PayMent(int tableID)
+        {
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            {
+                ORDER order = new ORDER();
+                TABLE table = new TABLE();
+                order = (from o in db.ORDERs where o.ID_TABLE == tableID && o.PAY == 0 select o).FirstOrDefault();
+                order.PAY = 1;
+                table = (from tb in db.TABLEs where tb.ID == tableID select tb).FirstOrDefault();
+                table.STATUS = 0;
+                db.SubmitChanges();
+            }
+        }
     }
 }

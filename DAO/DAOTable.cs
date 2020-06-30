@@ -106,6 +106,17 @@ namespace DAO
                 db.SubmitChanges();
                 return true;
             }
-        } 
+        }
+
+        public TABLE getCurrentTable(int tableID)
+        {
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            {
+                TABLE table = new TABLE();               
+                table = (from tb in db.TABLEs where tb.ID == tableID select tb).FirstOrDefault();
+                return table;
+            }
+        }
+      
     }
 }

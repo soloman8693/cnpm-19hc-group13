@@ -66,5 +66,9 @@ namespace BUS
             DAOOrder.Instance.AddOrder(idUser, idTable);
             DAOTable.Instance.updateStatusTableNotAvailable(idTable);
         }
+
+        public TABLE getCurrentTable(int tableID) {
+            return DAOTable.Instance.getCurrentTable(tableID);
+        }
     }
 }

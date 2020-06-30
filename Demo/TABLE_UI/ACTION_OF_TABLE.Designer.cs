@@ -1,6 +1,6 @@
 ﻿namespace Demo.TABLE_UI
 {
-    partial class ACTION_OF_TABLE
+    partial class btnMoney
     {
         /// <summary>
         /// Required designer variable.
@@ -36,13 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.dtgListOrder = new System.Windows.Forms.DataGridView();
-            this.btnCash = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.btnDeleteTable = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FOOD_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AMOUNT_OF_FOOD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +47,14 @@
             this.FOOD_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DRINK_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_ORDER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCash = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.btnDeleteTable = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnTotalMoney = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgListOrder)).BeginInit();
@@ -135,8 +137,10 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.dtgListOrder);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.btnTotalMoney);
             this.groupBox2.Controls.Add(this.btnCash);
             this.groupBox2.Location = new System.Drawing.Point(25, 55);
             this.groupBox2.Name = "groupBox2";
@@ -144,15 +148,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách order";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(305, 303);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 36);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Thay đổi order";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // dtgListOrder
             // 
@@ -169,44 +164,12 @@
             this.DRINK_ID,
             this.ID_ORDER});
             this.dtgListOrder.Location = new System.Drawing.Point(6, 45);
+            this.dtgListOrder.MultiSelect = false;
             this.dtgListOrder.Name = "dtgListOrder";
             this.dtgListOrder.RowTemplate.Height = 24;
+            this.dtgListOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgListOrder.Size = new System.Drawing.Size(568, 252);
             this.dtgListOrder.TabIndex = 1;
-            // 
-            // btnCash
-            // 
-            this.btnCash.Location = new System.Drawing.Point(146, 303);
-            this.btnCash.Name = "btnCash";
-            this.btnCash.Size = new System.Drawing.Size(153, 36);
-            this.btnCash.TabIndex = 0;
-            this.btnCash.Text = "Thanh Toán";
-            this.btnCash.UseVisualStyleBackColor = true;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnDeleteTable,
-            this.resetStatusToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1135, 28);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // btnDeleteTable
-            // 
-            this.btnDeleteTable.Name = "btnDeleteTable";
-            this.btnDeleteTable.Size = new System.Drawing.Size(76, 24);
-            this.btnDeleteTable.Text = "Xóa bàn";
-            this.btnDeleteTable.Click += new System.EventHandler(this.btnDeleteTable_Click);
-            // 
-            // resetStatusToolStripMenuItem
-            // 
-            this.resetStatusToolStripMenuItem.Name = "resetStatusToolStripMenuItem";
-            this.resetStatusToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
-            this.resetStatusToolStripMenuItem.Text = "Reset Status";
             // 
             // STT
             // 
@@ -277,7 +240,73 @@
             this.ID_ORDER.HeaderText = "ID_ORDER";
             this.ID_ORDER.Name = "ID_ORDER";
             // 
-            // ACTION_OF_TABLE
+            // btnCash
+            // 
+            this.btnCash.Location = new System.Drawing.Point(15, 303);
+            this.btnCash.Name = "btnCash";
+            this.btnCash.Size = new System.Drawing.Size(153, 36);
+            this.btnCash.TabIndex = 0;
+            this.btnCash.Text = "Thanh Toán";
+            this.btnCash.UseVisualStyleBackColor = true;
+            this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnDeleteTable,
+            this.resetStatusToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1135, 28);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // btnDeleteTable
+            // 
+            this.btnDeleteTable.Name = "btnDeleteTable";
+            this.btnDeleteTable.Size = new System.Drawing.Size(76, 24);
+            this.btnDeleteTable.Text = "Xóa bàn";
+            this.btnDeleteTable.Click += new System.EventHandler(this.btnDeleteTable_Click);
+            // 
+            // resetStatusToolStripMenuItem
+            // 
+            this.resetStatusToolStripMenuItem.Name = "resetStatusToolStripMenuItem";
+            this.resetStatusToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
+            this.resetStatusToolStripMenuItem.Text = "Reset Status";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(174, 310);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 20);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Tổng Tiền:";
+            // 
+            // btnTotalMoney
+            // 
+            this.btnTotalMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTotalMoney.ForeColor = System.Drawing.Color.Red;
+            this.btnTotalMoney.Location = new System.Drawing.Point(278, 302);
+            this.btnTotalMoney.Name = "btnTotalMoney";
+            this.btnTotalMoney.Size = new System.Drawing.Size(227, 37);
+            this.btnTotalMoney.TabIndex = 4;
+            this.btnTotalMoney.Text = "TongTien";
+            this.btnTotalMoney.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(511, 311);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 20);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "VND";
+            // 
+            // btnMoney
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -288,13 +317,14 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "ACTION_OF_TABLE";
+            this.Name = "btnMoney";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ACTION_OF_TABLE";
             this.Load += new System.EventHandler(this.ACTION_OF_TABLE_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgListOrder)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -318,7 +348,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnDeleteTable;
         private System.Windows.Forms.ToolStripMenuItem resetStatusToolStripMenuItem;
         private System.Windows.Forms.Label lbInfor;
-        private System.Windows.Forms.Button button1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn FOOD_NAME;
@@ -330,5 +359,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FOOD_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn DRINK_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_ORDER;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnTotalMoney;
+        private System.Windows.Forms.Label label4;
     }
 }

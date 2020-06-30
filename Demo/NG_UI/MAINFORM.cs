@@ -27,17 +27,26 @@ namespace Demo.NG_UI
             this.Hide();
             login.Show();
         }
-
+        public static TABLE currentTalbe;
+        private List<TABLE> tables;
         private void frmMain_Load(object sender, EventArgs e)
         {
             btnUserName.Text = SignIn_Static_User.StaticUser.SignIn_User.FULL_NAME;
             lbTitle.Text = "Welcome to GOLD restaurent - " + DateTime.Now.ToString("dd/MM/yyyy");
             lbTime.Text = DateTime.Now.ToString("HH:mm:ss");
             //load table
-            List<TABLE> tables = BUSTable.Instance.GetListTables();
-            for (int i = 0; i < tables.Count(); i++) {
+            set_list_table();
+
+
+        }
+
+        private void set_list_table()
+        {       
+            tables = BUSTable.Instance.GetListTables();
+            for (int i = 0; i < tables.Count(); i++)
+            {
                 Button b = new Button();
-                b.Name = "btnTable" + i;
+                b.Name = "btnTable" + i;           
                 b.Text = tables[i].TABLE_NAME.ToString();
                 if (tables[i].STATUS != 0)
                 {
@@ -47,13 +56,22 @@ namespace Demo.NG_UI
                 flowTableGenerate.Controls.Add(b);
             }
             flowTableGenerate.AutoScroll = true;
-           
         }
 
         private void table_button_click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            MessageBox.Show(btn.Name + "clicked"); 
+            char index = btn.Name[btn.Name.Length - 1];
+            currentTalbe = tables[int.Parse(index.ToString())];
+            TABLE_UI.btnMoney ob = new TABLE_UI.btnMoney();
+            ob.FormClosed += new FormClosedEventHandler(ob_FormClosed);
+            ob.ShowDialog();
+        }
+
+        void ob_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            while (flowTableGenerate.Controls.Count > 0) flowTableGenerate.Controls.RemoveAt(0);
+            frmMain_Load(this, null);
         }
 
         private void btnUserName_MouseHover(object sender, EventArgs e)
@@ -101,8 +119,8 @@ namespace Demo.NG_UI
         private void bànToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TABLE_UI.frm_ListTable frm_ListTable = new TABLE_UI.frm_ListTable();
-            this.Hide();
-            frm_ListTable.Show();
+            frm_ListTable.FormClosed += new FormClosedEventHandler(ob_FormClosed);
+            frm_ListTable.ShowDialog();
         }
     }
 }

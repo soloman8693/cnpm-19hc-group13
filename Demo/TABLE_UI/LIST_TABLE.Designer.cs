@@ -91,8 +91,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frm_ListTable";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Bàn";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_ListTable_FormClosing);
+            this.Text = "Bàn";          
             this.Load += new System.EventHandler(this.frm_ListTable_Load);
             this.groupBox1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);

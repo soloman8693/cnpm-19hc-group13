@@ -12,9 +12,9 @@ using DAO;
 
 namespace Demo.TABLE_UI
 {
-    public partial class ACTION_OF_TABLE : Form
+    public partial class btnMoney : Form
     {
-        public ACTION_OF_TABLE()
+        public btnMoney()
         {
             InitializeComponent();
         }
@@ -22,7 +22,8 @@ namespace Demo.TABLE_UI
 
         private void ACTION_OF_TABLE_Load(object sender, EventArgs e)
         {
-            currentTalbe = frm_ListTable.currentTalbe;
+            TABLE tbParent = frm_ListTable.currentTalbe != null ? frm_ListTable.currentTalbe : NG_UI.frmMain.currentTalbe != null ? NG_UI.frmMain.currentTalbe : null;
+            currentTalbe = BUSTable.Instance.getCurrentTable(tbParent.ID);
             this.Text = "Bàn " + currentTalbe.TABLE_NAME.ToString();
             lbInfor.Visible = false;
             setDataForStatusCB();
@@ -36,6 +37,10 @@ namespace Demo.TABLE_UI
             this.dtgListOrder.Columns["DRINK_ID"].Visible = false;
             this.dtgListOrder.Columns["ID_ORDER"].Visible = false;
             this.dtgListOrder.Columns["ID"].Visible = false;
+            btnTotalMoney.Text = BUSOrder.Instance.TotalMoney(currentTalbe.ID).ToString();
+            if (BUSOrder.Instance.TotalMoney(currentTalbe.ID) == 0) {
+                btnCash.Enabled = false;
+            }
         }
 
         private void setDataForStatusCB() {
@@ -104,6 +109,16 @@ namespace Demo.TABLE_UI
                 MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }      
+        }
+
+        private void btnCash_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Xác nhận thanh toán", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                BUSOrder.Instance.PayMent(currentTalbe.ID);
+                MessageBox.Show("Thanh toán thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ACTION_OF_TABLE_Load(this, null);
+            }           
         }
     }
 }

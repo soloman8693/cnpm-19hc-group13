@@ -20,6 +20,16 @@ namespace Demo.TABLE_UI
         }
         public static TABLE currentTalbe;
         private List<TABLE> tables;
+
+        public event EventHandler ButtonClicked;
+
+        public void NotifyButtonClicked(EventArgs e)
+        {
+            if (ButtonClicked != null)
+                ButtonClicked(this, e);
+
+        }
+
         private void frm_ListTable_Load(object sender, EventArgs e)
         {
             set_list_table();
@@ -53,7 +63,7 @@ namespace Demo.TABLE_UI
             Button btn = sender as Button;
             char index = btn.Name[btn.Name.Length - 1];
             currentTalbe = tables[int.Parse(index.ToString())];
-            ACTION_OF_TABLE ob = new ACTION_OF_TABLE();
+            btnMoney ob = new btnMoney();
             ob.FormClosed += new FormClosedEventHandler(ob_FormClosed);
             ob.ShowDialog();         
         }
@@ -65,18 +75,9 @@ namespace Demo.TABLE_UI
 
         private void btnHomePage_Click(object sender, EventArgs e)
         {
-            NG_UI.frmMain frmMain = new NG_UI.frmMain();
-            this.Hide();
-            frmMain.Show();
+            this.Close();
         }
-
-        private void frm_ListTable_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            NG_UI.frmMain frmMain = new NG_UI.frmMain();
-            this.Hide();
-            frmMain.Show();
-        }
-
+      
         private void btnAddTable_Click(object sender, EventArgs e)
         {
             ADD_TABLE ob = new ADD_TABLE();

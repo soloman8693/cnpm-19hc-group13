@@ -77,5 +77,15 @@ namespace BUS
         {
             return DAOOrder.Instance.getListDetailOrderByTableID(tableID);
         }
+
+        public double TotalMoney(int tableID)
+        {
+            return DAOOrder.Instance.TotalMoney(tableID);
+        }
+
+        public void PayMent(int tableID)
+        {
+            DAOOrder.Instance.PayMent(tableID);
+        }
     }
 }

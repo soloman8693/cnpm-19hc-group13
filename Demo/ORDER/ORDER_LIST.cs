@@ -37,20 +37,26 @@ namespace Demo.ORTHER
             TABLE_UI.BOOK_TABLE book_table = new TABLE_UI.BOOK_TABLE();
             book_table.Show();
         }
-
-        private void ORDER_LIST_Load(object sender, EventArgs e)
+        
+        public void reloadData()
         {
             BUSOrder.Instance.OrderList(dgvOrder);
             dgvOrder.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+        private void ORDER_LIST_Load(object sender, EventArgs e)
+        {
+            this.reloadData();
+        }
 
         private void dgvOrder_DataSourceChanged(object sender, EventArgs e)
         {
-            dgvOrder.Columns[1].Visible = false ;
+            dgvOrder.Columns[1].Visible = false;
             dgvOrder.Columns[2].Visible = false;
             dgvOrder.Columns[3].HeaderText = "Người thực hiện";
             dgvOrder.Columns[4].HeaderText = "Tên bàn";
             dgvOrder.Columns[5].HeaderText = "Tổng tiền";
+            dgvOrder.Columns[6].Visible = false;
+            dgvOrder.Columns[7].HeaderText = "Trạng thái";
         }
 
         private void dgvOrder_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -61,6 +67,7 @@ namespace Demo.ORTHER
                 DAOOrder.Instance.SetIdOrder(id);
 
                 ORDER_LIST_DETAIL dt = new ORDER_LIST_DETAIL();
+                dt.onReloadData += reloadData;
                 dt.Show();
             }
         }

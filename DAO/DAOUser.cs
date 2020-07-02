@@ -43,11 +43,11 @@ namespace DAO
         }
      
         public void RememberSignIn(string UserName,string PassWord,Boolean Remember) {
-            //var RegistedUser;
+            USER RegistedUser;
             using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
             {
-                //RegistedUser = (USER)(from u in db.USERs where u.USER_NAME.Trim() == UserName && u.PASSWORD == PassWord.Trim() select u).FirstOrDefault();
-                var RegistedUser = (from u in db.USERs select u).FirstOrDefault();
+                RegistedUser = (USER)(from u in db.USERs where u.USER_NAME.Trim() == UserName && u.PASSWORD == PassWord.Trim() select u).FirstOrDefault();
+               // var RegistedUser = (from u in db.USERs select u).FirstOrDefault();
                 RegistedUser.REMEMBER = Remember == true ? 1 : 0;
                 db.SubmitChanges();
             }

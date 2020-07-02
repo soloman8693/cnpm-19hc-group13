@@ -1122,6 +1122,8 @@ namespace DAO
 		
 		private System.Nullable<double> _TOTAL_MONEY;
 		
+		private System.Nullable<int> _PAY;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1134,6 +1136,8 @@ namespace DAO
     partial void OnID_TABLEChanged();
     partial void OnTOTAL_MONEYChanging(System.Nullable<double> value);
     partial void OnTOTAL_MONEYChanged();
+    partial void OnPAYChanging(System.Nullable<int> value);
+    partial void OnPAYChanged();
     #endregion
 		
 		public ORDER()
@@ -1217,6 +1221,26 @@ namespace DAO
 					this._TOTAL_MONEY = value;
 					this.SendPropertyChanged("TOTAL_MONEY");
 					this.OnTOTAL_MONEYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PAY", DbType="Int")]
+		public System.Nullable<int> PAY
+		{
+			get
+			{
+				return this._PAY;
+			}
+			set
+			{
+				if ((this._PAY != value))
+				{
+					this.OnPAYChanging(value);
+					this.SendPropertyChanging();
+					this._PAY = value;
+					this.SendPropertyChanged("PAY");
+					this.OnPAYChanged();
 				}
 			}
 		}

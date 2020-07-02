@@ -59,6 +59,7 @@
       <Column Name="ID_USER" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ID_TABLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TOTAL_MONEY" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.PERMISSION" Member="PERMISSIONs">

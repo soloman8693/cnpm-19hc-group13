@@ -16,6 +16,10 @@ namespace DAO
         public string FULL_NAME_USER { get; set; }
         public int TABLE_NAME { get; set; }
         public double TOTAL_MONEY { get; set; }
+
+        public int PAY { get; set; }
+
+        public string STATUS_PAY { get; set; }
     }
 
 
@@ -61,7 +65,9 @@ namespace DAO
                             ID_USER = (int)order.ID_USER,
                             FULL_NAME_USER = user.FULL_NAME,
                             TABLE_NAME = (int)table.TABLE_NAME,
-                            TOTAL_MONEY = (double)order.TOTAL_MONEY
+                            TOTAL_MONEY = db.DETAIL_ORDERs.Where(od => od.ID_ORDER == order.ID).Sum(a => a.MONEY).GetValueOrDefault(),
+                            PAY = (int)order.PAY,
+                            STATUS_PAY = (order.PAY == 0) ? "Chưa thanh toán" : "Đã thanh toán"
                         }).ToList();
             }
             return list;
@@ -81,7 +87,7 @@ namespace DAO
         {
             List<FOOD> list = new List<FOOD>();
 
-            using(QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
             {
                 list = db.FOODs.ToList();
             }
@@ -93,16 +99,17 @@ namespace DAO
         {
             List<DRINK> list = new List<DRINK>();
 
-            using(QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
             {
                 list = db.DRINKs.ToList();
             }
             return list;
         }
 
-        public void AddOrder(int idOrder, int idFood, string nameFood, int amountFood, int idDrink, string nameDrink, int amountDrink, double totalMoney) 
+       // public void AddOrder(int idOrder, int idFood, string nameFood, int amountFood, int idDrink, string nameDrink, int amountDrink, double totalMoney)
+        public void AddOrderDetail(int idOrder, int idFood, string nameFood, int amountFood, int idDrink, string nameDrink, int amountDrink, double totalMoney) 
         {
-            using(QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
             {
                 DETAIL_ORDER dt = new DETAIL_ORDER();
 
@@ -146,6 +153,66 @@ namespace DAO
                 dt.MONEY = total;
                 db.SubmitChanges();
                 return true;
+            }
+        }
+
+        public List<DETAIL_ORDER> getListDetailOrderByTableID(int tableID)
+        {
+            List<DETAIL_ORDER> listOrder = new List<DETAIL_ORDER>();
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            {
+                listOrder = (from o in db.ORDERs join dt in db.DETAIL_ORDERs on o.ID equals dt.ID_ORDER where o.ID_TABLE == tableID && o.PAY == 0 select dt).ToList();
+                return listOrder;
+
+            }
+        }
+        public void AddOrder(int idUser, int idTable)
+        {
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            {
+                ORDER order = new ORDER();
+
+                order.ID_USER = idUser;
+                order.ID_TABLE = idTable;
+                order.TOTAL_MONEY = 0;
+                order.PAY = 0;
+                db.ORDERs.InsertOnSubmit(order);
+                db.SubmitChanges();
+            }
+        }
+        public double TotalMoney(int tableID)
+        {
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            {
+                double totalMoney = 0;
+                ORDER order = new ORDER();
+                List<DETAIL_ORDER> listOrder = new List<DETAIL_ORDER>();
+                listOrder = getListDetailOrderByTableID(tableID);
+                foreach (var dt in listOrder)
+                {
+                    totalMoney += (double)dt.MONEY;
+                }
+                order = (from o in db.ORDERs where o.ID_TABLE == tableID && o.PAY == 0 select o).FirstOrDefault();
+                if (order != null  && order.TOTAL_MONEY != totalMoney ) {
+                    order.TOTAL_MONEY = totalMoney;
+                    db.SubmitChanges();
+                }
+                return totalMoney;
+                
+            }
+        }
+
+        public void PayMent(int tableID)
+        {
+            using (QuanLyNhaHangDataContext db = new QuanLyNhaHangDataContext())
+            {
+                ORDER order = new ORDER();
+                TABLE table = new TABLE();
+                order = (from o in db.ORDERs where o.ID_TABLE == tableID && o.PAY == 0 select o).FirstOrDefault();
+                order.PAY = 1;
+                table = (from tb in db.TABLEs where tb.ID == tableID select tb).FirstOrDefault();
+                table.STATUS = 0;
+                db.SubmitChanges();
             }
         }
     }

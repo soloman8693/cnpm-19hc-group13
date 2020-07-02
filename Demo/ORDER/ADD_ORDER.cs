@@ -62,7 +62,7 @@ namespace Demo.ORDER
                 MessageBox.Show("Giá trị không hợp lệ");
             }
 
-            BUSOrder.Instance.AddOrder(idOrder, idFood, txtFood, (int)amountFood, idDrink, txtDrink, amountDrink, totalMoney);
+            BUSOrder.Instance.AddOrderDetail(idOrder, idFood, txtFood, (int)amountFood, idDrink, txtDrink, amountDrink, totalMoney);
             this.Close();
             onAddData?.Invoke();
         }

@@ -26,7 +26,7 @@ namespace BUS
 
         public void OrderList(DataGridView dataGridView)
         {
-            dataGridView.DataSource =  DAOOrder.Instance.OrderList();
+            dataGridView.DataSource = DAOOrder.Instance.OrderList();
         }
 
         public void OrderListDetail(DataGridView dataGridView, int id)
@@ -58,14 +58,34 @@ namespace BUS
             }
         }
 
-        public void AddOrder(int idOrder, int idFood, string nameFood, int amountFood, int idDrink, string nameDrink, int amountDrink, double totalMoney)
+        public void AddOrderDetail(int idOrder, int idFood, string nameFood, int amountFood, int idDrink, string nameDrink, int amountDrink, double totalMoney)
         {
-            DAOOrder.Instance.AddOrder(idOrder, idFood, nameFood, amountFood, idDrink, nameDrink, amountDrink, totalMoney);
+            DAOOrder.Instance.AddOrderDetail(idOrder, idFood, nameFood, amountFood, idDrink, nameDrink, amountDrink, totalMoney);
         }
 
         public bool DeleteOrderDetail(int id)
         {
             return DAOOrder.Instance.DeleteOrderDetail(id);
+        }
+
+        public bool UpdateOrderDetail(int id, int idFood, string nameFood, int amountFood, int idDrink, string nameDrink, int amountDrink, double total)
+        {
+            return DAOOrder.Instance.UpdateOrderDetail(id, idFood, nameFood, amountFood, idDrink, nameDrink, amountDrink, total);
+        }
+
+        public List<DETAIL_ORDER> getListDetailOrderByTableID(int tableID)
+        {
+            return DAOOrder.Instance.getListDetailOrderByTableID(tableID);
+        }
+
+        public double TotalMoney(int tableID)
+        {
+            return DAOOrder.Instance.TotalMoney(tableID);
+        }
+
+        public void PayMent(int tableID)
+        {
+            DAOOrder.Instance.PayMent(tableID);
         }
     }
 }

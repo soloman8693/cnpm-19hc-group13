@@ -42,16 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAODishes.cs" />
     <Compile Include="DAOOrder.cs" />
     <Compile Include="DAOTable.cs" />
     <Compile Include="DAOUser.cs" />
     <Compile Include="DataSingleton.cs" />
-    <Compile Include="DemoLinQ.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DemoLinQ.dbml</DependentUpon>
-    </Compile>
     <Compile Include="NameDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -67,14 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="DemoLinQ.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DemoLinQ.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DemoLinQ.dbml.layout">
-      <DependentUpon>DemoLinQ.dbml</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

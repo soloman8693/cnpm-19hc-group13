@@ -36,6 +36,9 @@ namespace DAO
     partial void InsertDRINK(DRINK instance);
     partial void UpdateDRINK(DRINK instance);
     partial void DeleteDRINK(DRINK instance);
+    partial void InsertFOOD(FOOD instance);
+    partial void UpdateFOOD(FOOD instance);
+    partial void DeleteFOOD(FOOD instance);
     partial void InsertFOOD_RESOURCE(FOOD_RESOURCE instance);
     partial void UpdateFOOD_RESOURCE(FOOD_RESOURCE instance);
     partial void DeleteFOOD_RESOURCE(FOOD_RESOURCE instance);
@@ -60,16 +63,10 @@ namespace DAO
     partial void InsertUSER(USER instance);
     partial void UpdateUSER(USER instance);
     partial void DeleteUSER(USER instance);
-    partial void InsertFOOD(FOOD instance);
-    partial void UpdateFOOD(FOOD instance);
-    partial void DeleteFOOD(FOOD instance);
-    partial void InsertFOOD_RESOURCE_MATERIAL(FOOD_RESOURCE_MATERIAL instance);
-    partial void UpdateFOOD_RESOURCE_MATERIAL(FOOD_RESOURCE_MATERIAL instance);
-    partial void DeleteFOOD_RESOURCE_MATERIAL(FOOD_RESOURCE_MATERIAL instance);
     #endregion
 		
 		public QuanLyNhaHangDataContext() : 
-				base(global::DAO.Properties.Settings.Default.QUANLYNHAHANGConnectionString, mappingSource)
+				base(global::DAO.Properties.Settings.Default.DemoConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -111,6 +108,14 @@ namespace DAO
 			get
 			{
 				return this.GetTable<DRINK>();
+			}
+		}
+		
+		public System.Data.Linq.Table<FOOD> FOODs
+		{
+			get
+			{
+				return this.GetTable<FOOD>();
 			}
 		}
 		
@@ -175,22 +180,6 @@ namespace DAO
 			get
 			{
 				return this.GetTable<USER>();
-			}
-		}
-		
-		public System.Data.Linq.Table<FOOD> FOODs
-		{
-			get
-			{
-				return this.GetTable<FOOD>();
-			}
-		}
-		
-		public System.Data.Linq.Table<FOOD_RESOURCE_MATERIAL> FOOD_RESOURCE_MATERIALs
-		{
-			get
-			{
-				return this.GetTable<FOOD_RESOURCE_MATERIAL>();
 			}
 		}
 	}
@@ -510,6 +499,140 @@ namespace DAO
 					this._DRINK_NAME = value;
 					this.SendPropertyChanged("DRINK_NAME");
 					this.OnDRINK_NAMEChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.FOOD")]
+	public partial class FOOD : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _FOOD_NAME;
+		
+		private string _FOOD_TYPE;
+		
+		private System.Nullable<int> _ID_FOOD_TYPE;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnFOOD_NAMEChanging(string value);
+    partial void OnFOOD_NAMEChanged();
+    partial void OnFOOD_TYPEChanging(string value);
+    partial void OnFOOD_TYPEChanged();
+    partial void OnID_FOOD_TYPEChanging(System.Nullable<int> value);
+    partial void OnID_FOOD_TYPEChanged();
+    #endregion
+		
+		public FOOD()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FOOD_NAME", DbType="NVarChar(250)")]
+		public string FOOD_NAME
+		{
+			get
+			{
+				return this._FOOD_NAME;
+			}
+			set
+			{
+				if ((this._FOOD_NAME != value))
+				{
+					this.OnFOOD_NAMEChanging(value);
+					this.SendPropertyChanging();
+					this._FOOD_NAME = value;
+					this.SendPropertyChanged("FOOD_NAME");
+					this.OnFOOD_NAMEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FOOD_TYPE", DbType="NVarChar(250)")]
+		public string FOOD_TYPE
+		{
+			get
+			{
+				return this._FOOD_TYPE;
+			}
+			set
+			{
+				if ((this._FOOD_TYPE != value))
+				{
+					this.OnFOOD_TYPEChanging(value);
+					this.SendPropertyChanging();
+					this._FOOD_TYPE = value;
+					this.SendPropertyChanged("FOOD_TYPE");
+					this.OnFOOD_TYPEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_FOOD_TYPE", DbType="Int")]
+		public System.Nullable<int> ID_FOOD_TYPE
+		{
+			get
+			{
+				return this._ID_FOOD_TYPE;
+			}
+			set
+			{
+				if ((this._ID_FOOD_TYPE != value))
+				{
+					this.OnID_FOOD_TYPEChanging(value);
+					this.SendPropertyChanging();
+					this._ID_FOOD_TYPE = value;
+					this.SendPropertyChanged("ID_FOOD_TYPE");
+					this.OnID_FOOD_TYPEChanged();
 				}
 			}
 		}
@@ -999,6 +1122,8 @@ namespace DAO
 		
 		private System.Nullable<double> _TOTAL_MONEY;
 		
+		private System.Nullable<int> _PAY;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1011,6 +1136,8 @@ namespace DAO
     partial void OnID_TABLEChanged();
     partial void OnTOTAL_MONEYChanging(System.Nullable<double> value);
     partial void OnTOTAL_MONEYChanged();
+    partial void OnPAYChanging(System.Nullable<int> value);
+    partial void OnPAYChanged();
     #endregion
 		
 		public ORDER()
@@ -1094,6 +1221,26 @@ namespace DAO
 					this._TOTAL_MONEY = value;
 					this.SendPropertyChanged("TOTAL_MONEY");
 					this.OnTOTAL_MONEYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PAY", DbType="Int")]
+		public System.Nullable<int> PAY
+		{
+			get
+			{
+				return this._PAY;
+			}
+			set
+			{
+				if ((this._PAY != value))
+				{
+					this.OnPAYChanging(value);
+					this.SendPropertyChanging();
+					this._PAY = value;
+					this.SendPropertyChanged("PAY");
+					this.OnPAYChanged();
 				}
 			}
 		}
@@ -1750,322 +1897,6 @@ namespace DAO
 					this._REMEMBER = value;
 					this.SendPropertyChanged("REMEMBER");
 					this.OnREMEMBERChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.FOOD")]
-	public partial class FOOD : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _FOOD_NAME;
-		
-		private string _FOOD_TYPE;
-		
-		private System.Nullable<int> _ID_FOOD_TYPE;
-		
-		private string _FOOD_DESCRIPTION;
-		
-		private System.Nullable<double> _PRICE;
-		
-		private System.Nullable<bool> _AVAIABLE;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnFOOD_NAMEChanging(string value);
-    partial void OnFOOD_NAMEChanged();
-    partial void OnFOOD_TYPEChanging(string value);
-    partial void OnFOOD_TYPEChanged();
-    partial void OnID_FOOD_TYPEChanging(System.Nullable<int> value);
-    partial void OnID_FOOD_TYPEChanged();
-    partial void OnFOOD_DESCRIPTIONChanging(string value);
-    partial void OnFOOD_DESCRIPTIONChanged();
-    partial void OnPRICEChanging(System.Nullable<double> value);
-    partial void OnPRICEChanged();
-    partial void OnAVAIABLEChanging(System.Nullable<bool> value);
-    partial void OnAVAIABLEChanged();
-    #endregion
-		
-		public FOOD()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FOOD_NAME", DbType="NVarChar(250)")]
-		public string FOOD_NAME
-		{
-			get
-			{
-				return this._FOOD_NAME;
-			}
-			set
-			{
-				if ((this._FOOD_NAME != value))
-				{
-					this.OnFOOD_NAMEChanging(value);
-					this.SendPropertyChanging();
-					this._FOOD_NAME = value;
-					this.SendPropertyChanged("FOOD_NAME");
-					this.OnFOOD_NAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FOOD_TYPE", DbType="NVarChar(250)")]
-		public string FOOD_TYPE
-		{
-			get
-			{
-				return this._FOOD_TYPE;
-			}
-			set
-			{
-				if ((this._FOOD_TYPE != value))
-				{
-					this.OnFOOD_TYPEChanging(value);
-					this.SendPropertyChanging();
-					this._FOOD_TYPE = value;
-					this.SendPropertyChanged("FOOD_TYPE");
-					this.OnFOOD_TYPEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_FOOD_TYPE", DbType="Int")]
-		public System.Nullable<int> ID_FOOD_TYPE
-		{
-			get
-			{
-				return this._ID_FOOD_TYPE;
-			}
-			set
-			{
-				if ((this._ID_FOOD_TYPE != value))
-				{
-					this.OnID_FOOD_TYPEChanging(value);
-					this.SendPropertyChanging();
-					this._ID_FOOD_TYPE = value;
-					this.SendPropertyChanged("ID_FOOD_TYPE");
-					this.OnID_FOOD_TYPEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FOOD_DESCRIPTION", DbType="NVarChar(200)")]
-		public string FOOD_DESCRIPTION
-		{
-			get
-			{
-				return this._FOOD_DESCRIPTION;
-			}
-			set
-			{
-				if ((this._FOOD_DESCRIPTION != value))
-				{
-					this.OnFOOD_DESCRIPTIONChanging(value);
-					this.SendPropertyChanging();
-					this._FOOD_DESCRIPTION = value;
-					this.SendPropertyChanged("FOOD_DESCRIPTION");
-					this.OnFOOD_DESCRIPTIONChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRICE", DbType="Float")]
-		public System.Nullable<double> PRICE
-		{
-			get
-			{
-				return this._PRICE;
-			}
-			set
-			{
-				if ((this._PRICE != value))
-				{
-					this.OnPRICEChanging(value);
-					this.SendPropertyChanging();
-					this._PRICE = value;
-					this.SendPropertyChanged("PRICE");
-					this.OnPRICEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AVAIABLE", DbType="Bit")]
-		public System.Nullable<bool> AVAIABLE
-		{
-			get
-			{
-				return this._AVAIABLE;
-			}
-			set
-			{
-				if ((this._AVAIABLE != value))
-				{
-					this.OnAVAIABLEChanging(value);
-					this.SendPropertyChanging();
-					this._AVAIABLE = value;
-					this.SendPropertyChanged("AVAIABLE");
-					this.OnAVAIABLEChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.FOOD_RESOURCE_MATERIAL")]
-	public partial class FOOD_RESOURCE_MATERIAL : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private long _ID_FOOD;
-		
-		private long _ID_RESOURCE;
-		
-		private string _NOTE;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnID_FOODChanging(long value);
-    partial void OnID_FOODChanged();
-    partial void OnID_RESOURCEChanging(long value);
-    partial void OnID_RESOURCEChanged();
-    partial void OnNOTEChanging(string value);
-    partial void OnNOTEChanged();
-    #endregion
-		
-		public FOOD_RESOURCE_MATERIAL()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_FOOD", DbType="BigInt NOT NULL", IsPrimaryKey=true)]
-		public long ID_FOOD
-		{
-			get
-			{
-				return this._ID_FOOD;
-			}
-			set
-			{
-				if ((this._ID_FOOD != value))
-				{
-					this.OnID_FOODChanging(value);
-					this.SendPropertyChanging();
-					this._ID_FOOD = value;
-					this.SendPropertyChanged("ID_FOOD");
-					this.OnID_FOODChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_RESOURCE", DbType="BigInt NOT NULL", IsPrimaryKey=true)]
-		public long ID_RESOURCE
-		{
-			get
-			{
-				return this._ID_RESOURCE;
-			}
-			set
-			{
-				if ((this._ID_RESOURCE != value))
-				{
-					this.OnID_RESOURCEChanging(value);
-					this.SendPropertyChanging();
-					this._ID_RESOURCE = value;
-					this.SendPropertyChanged("ID_RESOURCE");
-					this.OnID_RESOURCEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOTE", DbType="NChar(100)")]
-		public string NOTE
-		{
-			get
-			{
-				return this._NOTE;
-			}
-			set
-			{
-				if ((this._NOTE != value))
-				{
-					this.OnNOTEChanging(value);
-					this.SendPropertyChanging();
-					this._NOTE = value;
-					this.SendPropertyChanged("NOTE");
-					this.OnNOTEChanged();
 				}
 			}
 		}

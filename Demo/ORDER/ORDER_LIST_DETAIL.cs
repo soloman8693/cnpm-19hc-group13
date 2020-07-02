@@ -14,6 +14,7 @@ namespace Demo.ORDER
 {
     public partial class ORDER_LIST_DETAIL : Form
     {
+        public Action onReloadData;
         public ORDER_LIST_DETAIL()
         {
             InitializeComponent();
@@ -68,6 +69,11 @@ namespace Demo.ORDER
         private void dgvOrderListDetail_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void ORDER_LIST_DETAIL_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            onReloadData?.Invoke();
         }
     }
 }

@@ -90,5 +90,11 @@ namespace Demo.NG_UI
             TABLE_UI.BOOK_TABLE bookTable = new TABLE_UI.BOOK_TABLE();
             bookTable.Show();
         }
+
+        private void mónĂnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DISHES_UI.Dishes dishes = new DISHES_UI.Dishes();
+            dishes.Show();
+        }
     }
 }

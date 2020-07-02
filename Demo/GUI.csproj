@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DISHES_UI\Add_Dishes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISHES_UI\Add_Dishes.Designer.cs">
+      <DependentUpon>Add_Dishes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DISHES_UI\Dishes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISHES_UI\Dishes.Designer.cs">
+      <DependentUpon>Dishes.cs</DependentUpon>
+    </Compile>
     <Compile Include="EMPLOYEE_UI\Employee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +81,12 @@
     </Compile>
     <Compile Include="EMPLOYEE_UI\ADD_EMPLOYEE.Designer.cs">
       <DependentUpon>ADD_EMPLOYEE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="NG_UI\LOGIN.cs">
       <SubType>Form</SubType>
@@ -127,6 +145,12 @@
     <Compile Include="TABLE_UI\BOOK_TABLE.Designer.cs">
       <DependentUpon>BOOK_TABLE.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DISHES_UI\Add_Dishes.resx">
+      <DependentUpon>Add_Dishes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DISHES_UI\Dishes.resx">
+      <DependentUpon>Dishes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EMPLOYEE_UI\Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EMPLOYEE_UI\ADD_EMPLOYEE.resx">
       <DependentUpon>ADD_EMPLOYEE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NG_UI\LOGIN.resx">
       <DependentUpon>LOGIN.cs</DependentUpon>
@@ -196,6 +223,10 @@
     <ProjectReference Include="..\DAO\DAO.csproj">
       <Project>{43cc4b11-a5b9-428b-b30d-1e58ca59b977}</Project>
       <Name>DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjectListView\ObjectListView\ObjectListView2012.csproj">
+      <Project>{e8a9ddbe-b072-4bcf-ad60-929b2f2cee4a}</Project>
+      <Name>ObjectListView2012</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

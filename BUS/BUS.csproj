@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BUSDishes.cs" />
     <Compile Include="BUSOrder.cs" />
     <Compile Include="BUSTable.cs" />
     <Compile Include="BUSUser.cs" />

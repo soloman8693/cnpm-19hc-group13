@@ -37,6 +37,9 @@
             this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.nguyênLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mónĂnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbTitle = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbTime = new System.Windows.Forms.Label();
@@ -69,7 +72,8 @@
             this.toolStripMenuItem1,
             this.orderToolStripMenuItem,
             this.orderToolStripMenuItem1,
-            this.nguyênLiệuToolStripMenuItem});
+            this.nguyênLiệuToolStripMenuItem,
+            this.quanToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -119,6 +123,28 @@
             this.nguyênLiệuToolStripMenuItem.Name = "nguyênLiệuToolStripMenuItem";
             this.nguyênLiệuToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
             this.nguyênLiệuToolStripMenuItem.Text = "Nguyên Liệu";
+            // 
+            // quanToolStripMenuItem
+            // 
+            this.quanToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mónĂnToolStripMenuItem,
+            this.menuToolStripMenuItem});
+            this.quanToolStripMenuItem.Name = "quanToolStripMenuItem";
+            this.quanToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
+            this.quanToolStripMenuItem.Text = "Quản Lý Món Ăn";
+            // 
+            // mónĂnToolStripMenuItem
+            // 
+            this.mónĂnToolStripMenuItem.Name = "mónĂnToolStripMenuItem";
+            this.mónĂnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mónĂnToolStripMenuItem.Text = "Món Ăn";
+            this.mónĂnToolStripMenuItem.Click += new System.EventHandler(this.mónĂnToolStripMenuItem_Click);
+            // 
+            // menuToolStripMenuItem
+            // 
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.menuToolStripMenuItem.Text = "Menu";
             // 
             // lbTitle
             // 
@@ -218,5 +244,8 @@
         private System.Windows.Forms.FlowLayoutPanel flowTableGenerate;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ToolStripMenuItem quanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mónĂnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
     }
 }

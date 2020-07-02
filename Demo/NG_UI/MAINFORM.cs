@@ -109,6 +109,12 @@ namespace Demo.NG_UI
             bookTable.Show();
         }
 
+        private void mónĂnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DISHES_UI.Dishes dishes = new DISHES_UI.Dishes();
+            dishes.Show();
+        }
+
         private void btnUserName_Click(object sender, EventArgs e)
         {
             frmLogin login = new frmLogin();

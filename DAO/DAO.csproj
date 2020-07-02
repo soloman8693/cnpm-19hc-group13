@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAODishes.cs" />
     <Compile Include="DAOOrder.cs" />
     <Compile Include="DAOTable.cs" />
     <Compile Include="DAOUser.cs" />

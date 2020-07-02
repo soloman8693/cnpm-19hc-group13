@@ -67,15 +67,7 @@ namespace Demo.ORDER
 
         private void dgvOrderListDetail_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            EDIT_ORDER editOrder = new EDIT_ORDER();
-            editOrder.txtId.Text = this.dgvOrderListDetail.CurrentRow.Cells[0].Value.ToString();
-            BUS.BUSOrder.Instance.ListFoods(editOrder.cbbFoods, "UPDATE", Int32.Parse(this.dgvOrderListDetail.CurrentRow.Cells[2].Value.ToString()));
-            editOrder.txtAmountFoods.Text = this.dgvOrderListDetail.CurrentRow.Cells[4].Value.ToString();
-            BUS.BUSOrder.Instance.ListDrinks(editOrder.cbbDrinks, "UPDATE", Int32.Parse(this.dgvOrderListDetail.CurrentRow.Cells[5].Value.ToString()));
-            editOrder.txtAmountDrinks.Text = this.dgvOrderListDetail.CurrentRow.Cells[7].Value.ToString();
-            editOrder.txtTotal.Text = this.dgvOrderListDetail.CurrentRow.Cells[8].Value.ToString();
-            editOrder.onUpdateData += loadData;
-            editOrder.ShowDialog();
+
         }
     }
 }

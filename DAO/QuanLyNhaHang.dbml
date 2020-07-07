@@ -19,30 +19,10 @@
       <Column Name="DRINK_NAME" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.FOOD_RESOURCE" Member="FOOD_RESOURCEs">
-    <Type Name="FOOD_RESOURCE">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="RESOURCE_NAME" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Column Name="AMOUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MONEY" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TOTAL_MONEY" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.FOOD_TYPE" Member="FOOD_TYPEs">
     <Type Name="FOOD_TYPE">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="FOOD_TYPE" Member="FOOD_TYPE1" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.MENU" Member="MENUs">
-    <Type Name="MENU">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="WEEK_DAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID_FOOD" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="FOOD_NAME" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
-      <Column Name="ID_DRINK" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DRINK_NAME" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.[ORDER]" Member="ORDERs">
@@ -107,6 +87,40 @@
       <Column Name="ID_FOOD" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ID_RESOURCE" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="NOTE" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MENU" Member="MENUs">
+    <Type Name="MENU">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WEEK_DAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_FOOD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FOOD_NAME" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ID_DRINK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DRINK_NAME" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="MENU_DESCRIPTION" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="CAPACITY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRICE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="MENU_STATUS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MENU_FOOD" Member="MENU_FOODs">
+    <Type Name="MENU_FOOD">
+      <Column Name="ID_Menu" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_Food" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Note" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FOOD_RESOURCE" Member="FOOD_RESOURCEs">
+    <Type Name="FOOD_RESOURCE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RESOURCE_NAME" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="AMOUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MONEY" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TOTAL_MONEY" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ADD_RESOURCE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REQUEST_STATUS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

@@ -1,6 +1,6 @@
 ﻿namespace Demo.Menu
 {
-    partial class Menu
+    partial class frmMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -41,6 +41,7 @@
             this.dataGridViewMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMenu.Location = new System.Drawing.Point(3, 89);
             this.dataGridViewMenu.Name = "dataGridViewMenu";
+            this.dataGridViewMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewMenu.Size = new System.Drawing.Size(670, 282);
             this.dataGridViewMenu.TabIndex = 0;
             // 
@@ -61,6 +62,7 @@
             this.btbThem.TabIndex = 2;
             this.btbThem.Text = "Thêm";
             this.btbThem.UseVisualStyleBackColor = true;
+            this.btbThem.Click += new System.EventHandler(this.btbThem_Click);
             // 
             // btnSua
             // 
@@ -70,6 +72,7 @@
             this.btnSua.TabIndex = 2;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -80,7 +83,7 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             // 
-            // Menu
+            // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -90,8 +93,10 @@
             this.Controls.Add(this.btbThem);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewMenu);
-            this.Name = "Menu";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "frmMenu";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMenu)).EndInit();
             this.ResumeLayout(false);
 

@@ -43,6 +43,7 @@ namespace Demo.NG_UI
         private void set_list_table()
         {       
             tables = BUSTable.Instance.GetListTables();
+            flowTableGenerate.Controls.Clear();
             for (int i = 0; i < tables.Count(); i++)
             {
                 Button b = new Button();
@@ -106,6 +107,7 @@ namespace Demo.NG_UI
         private void orderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TABLE_UI.BOOK_TABLE bookTable = new TABLE_UI.BOOK_TABLE();
+            bookTable.onBookTable += set_list_table;
             bookTable.Show();
         }
 
@@ -127,6 +129,18 @@ namespace Demo.NG_UI
             TABLE_UI.frm_ListTable frm_ListTable = new TABLE_UI.frm_ListTable();
             frm_ListTable.FormClosed += new FormClosedEventHandler(ob_FormClosed);
             frm_ListTable.ShowDialog();
+        }
+
+        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Menu.frmMenu mn = new Menu.frmMenu();
+            mn.Show();
+        }
+
+        private void nguyênLiệuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RESOURCE_UI.Resource resource = new RESOURCE_UI.Resource();
+            resource.Show();
         }
     }
 }

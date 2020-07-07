@@ -43,7 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAODishes.cs" />
+    <Compile Include="DAOMenu.cs" />
     <Compile Include="DAOOrder.cs" />
+    <Compile Include="DAOResource.cs" />
     <Compile Include="DAOTable.cs" />
     <Compile Include="DAOUser.cs" />
     <Compile Include="DataSingleton.cs" />

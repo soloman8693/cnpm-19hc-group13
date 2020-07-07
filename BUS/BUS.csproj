@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUSDishes.cs" />
+    <Compile Include="BUSMenu.cs" />
     <Compile Include="BUSOrder.cs" />
+    <Compile Include="BUSResource.cs" />
     <Compile Include="BUSTable.cs" />
     <Compile Include="BUSUser.cs" />
     <Compile Include="Form1.cs">
